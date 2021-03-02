@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+    <script>
+        let cNum = prompt("Enter any number below to verify:", "");
+        if ((cNum > 0) && ((cNum % 2) == 0) && ((cNum % 7) == 0)) {
+            console.log("This number is a positive and a multiple of 2 and 7");
+            } else {
+                if ((cNum % 7) == 0) {
+                    console.log("This number is a multiple of 7");
+                    } else {
+                        if ((cNum > 0) && ((cNum % 2) == 0)) {
+                            console.log("This number is a positive and a multiple of 2");
+                            } else {                        
+                                console.log("You have entered an incorrect verification number"); 
+                                }
+                        }
+                }
+    </script>
+</body>
+</html>

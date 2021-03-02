@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+    <script>        
+        let dayTime1111 = prompt("enter the time as number:", "");
+        // or other method
+        var currDay = new Date();
+        let dayTime2222 = currDay.getHours();
+
+        dayTime = dayTime1111; // or   let tdayTime = dayTime1111;
+        if ((dayTime >= 0 && dayTime <= 5) || (dayTime > 23 && dayTime <= 24)) {
+            console.log("Good night.");
+        } else if (dayTime > 5 && dayTime <= 11) {
+                console.log("Good morning.");
+                }
+                else if (dayTime > 11 && dayTime <= 17) {
+                    console.log("Good day.");
+                    }
+                    else if (dayTime > 17 && dayTime <= 23) {
+                        console.log("Good evening.");
+                        }
+        
+        // or other method. - doesn't work now.
+        switch (dayTime) {
+            case (dayTime > 5 && dayTime <= 11):
+                console.log("Good morning.");
+                break;
+            case (dayTime > 11 && dayTime <= 17):
+                console.log("Good day.");
+                break;
+            case (dayTime > 17 && dayTime <= 23):
+                console.log("Good evening.");
+                break;
+            default: 
+            console.log("Good night.");
+        }
+    </script>
+</body>
+</html>

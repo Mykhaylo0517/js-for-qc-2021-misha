@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+    <script>
+        let isAdult = prompt("Enter your age as a number:", "0..10, 11..18, 19..99");
+        if (isAdult >= 18) {
+            console.log("You have reached the age of majority and your age is :", isAdult);
+            } else {
+                    if ((isAdult > 10) && (isAdult < 18)) {
+                        console.log("You are a teenager.");
+                        } else {
+                               console.log("You are still too young."); 
+                            }
+                }
+    </script>
+</body>
+</html>

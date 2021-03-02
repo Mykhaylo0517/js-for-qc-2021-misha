@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+    <script>
+        let squareTrangle;
+        let perimeterTriangle;
+        let sideA = prompt("enter the length of the A side of the triangle:", "");
+        let sideB = prompt("enter the length of the B side of the triangle:", "");
+        let sideC = prompt("enter the length of the C side of the triangle:", "");
+        sideA = Number(sideA);
+        sideB = Number(sideB);
+        sideC = Number(sideC);
+        console.log("Sides are: ", sideA, sideB, sideC, typeof sideA, typeof sideB, typeof sideC);
+        if (sideA+sideB>=sideC && sideB+sideC>=sideA && sideA+sideC>=sideB && sideA>0 && sideB>0 && sideC>0) {
+            console.log("The triangle is exist"); 
+            perimeterTriangle = (sideA+sideB+sideC)/2;
+            squareTrangle = perimeterTriangle*(perimeterTriangle-sideA)*(perimeterTriangle-sideB)*(perimeterTriangle-sideC);
+            squareTrangle = squareTrangle ** (1/2);
+            console.log("The square of the triangle is : ", squareTrangle.toFixed(3));
+            if (sideA*sideA+sideB*sideB == sideC*sideC || sideA*sideA+sideC*sideC == sideB*sideB || sideC*sideC+sideB*sideB == sideA*sideA) {
+                console.log("The triangle is right-angled.");
+                } else {
+                    console.log("The triangle is NOT right-angled.");
+                }   
+        } 
+            else {
+                console.log("Incorrect data.");
+            }
+    </script>
+</body>
+</html>

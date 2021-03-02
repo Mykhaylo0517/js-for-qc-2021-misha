@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+    <script>
+        // array initialization
+        let arrNew = [];
+        arrNew[0] = 5;
+        arrNew[1] = "any line";
+        arrNew[2] = true;
+        arrNew[3] = null;
+        document.writeln("Q-ty elements is : ", arrNew.length); 
+        console.log("Q-ty elements is : ", arrNew.length, arrNew);
+
+        // add the fifth element
+        let arrElem = prompt("for array enter any new element (number/boolean/string or null):", "");
+        arrNew[4] = arrElem;
+        document.writeln("New fifth element of the array is : ", arrNew[4]); 
+        
+        // delete the first element
+        arrNew.shift(1);
+        document.writeln("Updated array is : ", arrNew);
+        console.log("New array is : ", arrNew.length, arrNew);
+    </script>
+</body>
+</html>
