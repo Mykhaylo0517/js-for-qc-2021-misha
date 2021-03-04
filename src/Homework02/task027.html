@@ -6,37 +6,48 @@
 </head>
 <body>
     <script>        
-        let dayTime1111 = prompt("enter the time as number:", "");
-        // or other method
+        // Option 1. Initialization of the value of the variable by the user
+        let dayTime1 = prompt("enter the time as number from 0 to 24:", "");
+        // Option 2. Initialization of the value of the variable in real time
         var currDay = new Date();
-        let dayTime2222 = currDay.getHours();
+        let dayTime2 = currDay.getHours();
 
-        dayTime = dayTime1111; // or   let tdayTime = dayTime1111;
+        dayTime = dayTime1; // or   let dayTime = dayTime2;
+
+        // First method.
         if ((dayTime >= 0 && dayTime <= 5) || (dayTime > 23 && dayTime <= 24)) {
-            console.log("Good night.");
+            console.log("First method. Good night.");
         } else if (dayTime > 5 && dayTime <= 11) {
-                console.log("Good morning.");
+                console.log("First method. Good morning.");
                 }
                 else if (dayTime > 11 && dayTime <= 17) {
-                    console.log("Good day.");
+                    console.log("First method. Good day.");
                     }
                     else if (dayTime > 17 && dayTime <= 23) {
-                        console.log("Good evening.");
+                        console.log("First method. Good evening.");
                         }
         
-        // or other method. - doesn't work now.
-        switch (dayTime) {
-            case (dayTime > 5 && dayTime <= 11):
-                console.log("Good morning.");
+        // Second method. 
+        let x = 0;
+        if (dayTime > 5 && dayTime <= 11) { 
+            x = 1;
+        }   else if (dayTime > 11 && dayTime <= 17) {
+            x = 2;
+        }   else if (dayTime > 17 && dayTime <= 23) {
+            x = 3;
+        }
+        switch (x) {
+            case 1: 
+                console.log("Second method. Good morning.");
                 break;
-            case (dayTime > 11 && dayTime <= 17):
-                console.log("Good day.");
+            case 2: 
+                console.log("Second method. Good day.");
                 break;
-            case (dayTime > 17 && dayTime <= 23):
-                console.log("Good evening.");
+            case 3: 
+                console.log("Second method. Good evening.");
                 break;
             default: 
-            console.log("Good night.");
+            console.log("Second method. Good night.");
         }
     </script>
 </body>
