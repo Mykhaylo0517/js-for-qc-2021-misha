@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script> 
+        // by for
+        let arrNew = [2,3,4,5];
+        let multiplFor = 1;
+        for (let i = 0; i < arrNew.length; i++) {
+            multiplFor = multiplFor * arrNew[i]; 
+        }
+        console.log("Result by FOR = ", multiplFor);  //  Result = 120
+
+        // by while
+        let multiplWhile = 1;
+        let j = 0;
+    	do { 
+            multiplWhile = multiplWhile * arrNew[j];
+     	   j++;
+    	} while (j < arrNew.length) 
+        console.log("Result by WHILE = ", multiplWhile);  //  Result = 120
+    </script>
+</body>
+</html>

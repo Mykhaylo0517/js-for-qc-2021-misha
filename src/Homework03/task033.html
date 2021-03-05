@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script> 
+        function randArray(x) {
+            let min = 1;
+            let max = 500;
+            let randArr = [];
+            for (let i = 0; i < x; i++) {
+                temp = min + Math.random() * (max + 1 - min);
+                randArr [i] = Number(temp.toFixed(0));
+                // console.log(randArr [i]); 
+            }
+            console.log(randArr);
+        }
+        randArray(5);
+
+        // the same task, but using RETURN                
+        function randArrayNew(x) {
+            let min1 = 1;
+            let max1 = 500;
+            let randA = [];
+            for (let i = 0; i < x; i++) {
+                temp = min1 + Math.random() * (max1 + 1 - min1);
+                randA [i] = Number(temp.toFixed(0));
+            }
+            return console.log(randA);
+        }
+        randArrayNew(8);
+    </script>
+</body>
+</html>

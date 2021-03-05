@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script> 
+        function raiseToDegree(x,y) {
+            let result = x ** y;
+            return result;
+        }
+        let a;
+        let b;
+        // input positive number
+        a = Number(prompt("Enter the FIRST positive number:", ""));
+        while ((!Number.isInteger(a)) || (a < 0)) {
+            a = Number(prompt("try again (first number):", ""));
+        }
+        b = Number(prompt("Enter the SECOND positive number:", ""));
+        while ((!Number.isInteger(b)) || (b < 0)) {
+            b = Number(prompt("try again (second number):", ""));
+        }
+        // rai33seToDegree(a, b);   - why this result is UNDEFINE?
+        console.log(a + " ** " + b + " = " + raiseToDegree(a,b));
+    </script>
+</body>
+</html>
