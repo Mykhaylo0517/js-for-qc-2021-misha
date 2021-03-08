@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script> 
+        function findMin() {
+            let min = arguments[0];
+            for (let i = 0; i < arguments.length; i++) {
+ 		        if (min > arguments[i]) {
+                    min = arguments[i];
+                } 
+            }
+            return min;
+        }
+        console.log("Case 0. Minimum value for this array =" + findMin(12, 14, 4, -4, 0.2));
+        console.log("Case 1. Minimum value for this array =" + findMin(12, 14, 4, -4, 
+            0.2, -34, -36, 100, 0.24));
+        console.log("Case 2. Minimum value for this array =" + findMin(12, 0.24));
+        console.log("Case 3. Minimum value for this array =" + findMin(4));
+        console.log("Case 4. Minimum value for this array =" + findMin(4,  true, "fff"));
+        console.log("Case 5. Minimum value for this array =" + findMin("BA", "b", "a",
+           "A", "c", 0, "Bf"));
+        console.log("Case 6. Minimum value for this array =" + findMin(undefined, NaN, 
+           true, 0, "A"));
+    </script>
+</body>
+</html>

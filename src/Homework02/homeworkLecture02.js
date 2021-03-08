@@ -156,4 +156,19 @@ switch (x) {
     console.log("Second method. Good night.");
 }
 
+// third method. 
+switch (true) {
+    case (dayTime > 5 && dayTime <= 11): 
+        console.log("Third method. Good morning.");
+        break;
+    case (dayTime > 11 && dayTime <= 17): 
+        console.log("Third method. Good day.");
+        break;
+    case (dayTime > 17 && dayTime <= 23): 
+        console.log("Third method. Good evening.");
+        break;
+    default: 
+    console.log("Third method. Good night.");
+}
+
 // The solution of tasks for the Lecture-02 is completed

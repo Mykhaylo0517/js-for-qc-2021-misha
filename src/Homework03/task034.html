@@ -12,7 +12,7 @@
         }
         let a;
         let b;
-        // input positive number
+        // input two positive numbers
         a = Number(prompt("Enter the FIRST positive number:", ""));
         while ((!Number.isInteger(a)) || (a < 0)) {
             a = Number(prompt("try again (first number):", ""));
@@ -21,7 +21,7 @@
         while ((!Number.isInteger(b)) || (b < 0)) {
             b = Number(prompt("try again (second number):", ""));
         }
-        // rai33seToDegree(a, b);   - why this result is UNDEFINE?
+        // raiseToDegree(a, b);
         console.log(a + " ** " + b + " = " + raiseToDegree(a,b));
     </script>
 </body>

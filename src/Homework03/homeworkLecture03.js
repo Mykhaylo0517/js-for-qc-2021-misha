@@ -79,14 +79,106 @@ console.log(a + " ** " + b + " = " + raiseToDegree(a,b));
 
 // ********************  Task 5 **************************
 
+function findMin() {
+    let min = arguments[0];
+    for (let i = 0; i < arguments.length; i++) {
+         if (min > arguments[i]) {
+            min = arguments[i];
+        } 
+    }
+    return min;
+}
+console.log("Case 0. Minimum value for this array = " + findMin(12, 14, 4, -4, 0.2));
+console.log("Case 1. Minimum value for this array = " + findMin(12, 14, 4, -4, 
+    0.2, -34, -36, 100, 0.24));
+console.log("Case 2. Minimum value for this array = " + findMin(12, 0.24));
+console.log("Case 3. Minimum value for this array = " + findMin(4));
+console.log("Case 4. Minimum value for this array = " + findMin(4,  true, "fff"));
+console.log("Case 5. Minimum value for this array = " + findMin("BA", "b", "a",
+   "A", "c", 0, "Bf"));
+console.log("Case 6. Minimum value for this array = " + findMin(undefined, NaN, true, 0, "A"));
 
 // ********************  Task 6 **************************
 
+function findUnique(arr) {
+    let unique = true;
+    let i = arr.lenght;
+    for (let i = 0; i < (arr.length); i++) {
+        for (let j = (i + 1); j < arr.length; j++){
+            if (arr[i] == arr[j]) {
+                unique = false;
+            }
+        } 
+    }
+    return unique;
+}
+let arr1 = [1, 2, 3, 5, 3];
+let arr2 = [1, 2, 3, 5, 11];
+console.log(arr1 + " array contains only uniques elements -- " + findUnique(arr1));
+console.log(arr2 + " array contains only uniques elements -- " + findUnique(arr2));
 
 // ********************  Task 7 **************************
 
+function showFewValues(arr, b = 1) {
+    let arrRes = [];
+    let lengF;
+    let temp = b - arr.length; 
+    if (temp >= 0) {
+        lengF = arr.length + 0;
+        } else {
+            lengF = b + 0;
+            }
+    
+    let j = 0;
+    for (let i = ((arr.length) - lengF); i < arr.length; i++) {
+        arrRes [j] = arr [i]; 
+        j++;
+        }
+    return arrRes;
+}
+let a;         
+let arr1 = [3, 4, 10, -5];
+console.log("We see next elements of array : " , showFewValues(arr1));
+a = 2;
+console.log("We see next elements of array : ", showFewValues(arr1, a));
+a = 8;
+console.log("We see next elements of array : ", showFewValues(arr1, a));
+// a = 16;
+// console.log("We see next elements of array : ", showFewValues(arr1, a));
 
 // ********************  Task 8 **************************
 
+function convertFun(s) {
+    if (!s) return s;
+    let newStr = ""+ s[0].toUpperCase();
+    let temp;
+    let lengStr = s.length; 
+    for (i=0; i < s.length - 1; i++) {
+        if ((s[i] == " ") && (s[i+1] != " " )) {
+            temp = "" + s[i+1].toUpperCase();
+            newStr = newStr + temp;                    
+        } else {
+            newStr = newStr + s[i+1];
+        }
+    }               
+    return newStr;
+}
+
+let strStart;
+strStart = "i love java script";
+console.log("The first text : ", strStart);
+console.log("The text after convertation is : ", convertFun(strStart));
+strStart = " ";
+console.log("The first text : ", strStart);
+console.log("The text after convertation is : ", convertFun(strStart));
+strStart = "i love java s  ";
+console.log("The first text : ", strStart);
+console.log("The text after convertation is : ", convertFun(strStart));
+strStart = "i       love java script ";
+console.log("The first text : ", strStart);
+console.log("The text after convertation is : ", convertFun(strStart));
+strStart = "i       love5454 4556 java script";
+console.log("The first text : ", strStart);
+console.log("The text after convertation is : ", convertFun(strStart));
 
 // The solution of tasks for the Lecture-03 is completed

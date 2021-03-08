@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script> 
+        function findUnique(arr) {
+            let unique = true;
+            let i = arr.lenght;
+            for (let i = 0; i < (arr.length); i++) {
+                for (let j = (i + 1); j < arr.length; j++){
+                    if (arr[i] == arr[j]) {
+                        unique = false;
+                    }
+                } 
+            }
+            return unique;
+        }
+        let arr1 = [1, 2, 3, 5, 3];
+        let arr2 = [1, 2, 3, 5, 11];
+        console.log(arr1 + " array contains only uniques elements -- " + findUnique(arr1));
+        console.log(arr2 + " array contains only uniques elements -- " + findUnique(arr2));
+    </script>
+</body>
+</html>

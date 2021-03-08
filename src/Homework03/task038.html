@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script> 
+        function convertFun(s) {
+            if (!s) return s;
+            let newStr = ""+ s[0].toUpperCase();
+            let temp;
+            let lengStr = s.length; 
+            for (i=0; i < s.length - 1; i++) {
+                if ((s[i] == " ") && (s[i+1] != " " )) {
+                    temp = "" + s[i+1].toUpperCase();
+                    newStr = newStr + temp;                    
+                } else {
+                    newStr = newStr + s[i+1];
+                }
+            }               
+            return newStr;
+        }
+
+        let strStart;
+        strStart = "i love java script";
+        console.log("The first text : ", strStart);
+        console.log("The text after convertation is : ", convertFun(strStart));
+        strStart = " ";
+        console.log("The first text : ", strStart);
+        console.log("The text after convertation is : ", convertFun(strStart));
+        strStart = "i love java s  ";
+        console.log("The first text : ", strStart);
+        console.log("The text after convertation is : ", convertFun(strStart));
+        strStart = "i       love java script ";
+        console.log("The first text : ", strStart);
+        console.log("The text after convertation is : ", convertFun(strStart));
+        strStart = "i       love5454 4556 java script";
+        console.log("The first text : ", strStart);
+        console.log("The text after convertation is : ", convertFun(strStart));
+    </script>
+</body>
+</html>

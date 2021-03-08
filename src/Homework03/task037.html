@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script> 
+        function showFewValues(arr, b = 1) {
+            let arrRes = [];
+            let lengF;
+            let temp = b - arr.length; 
+            if (temp >= 0) {
+                lengF = arr.length + 0;
+                } else {
+                    lengF = b + 0;
+                    }
+            
+            let j = 0;
+            for (let i = ((arr.length) - lengF); i < arr.length; i++) {
+                arrRes [j] = arr [i]; 
+                j++;
+                }
+            return arrRes;
+        }
+        let a;         
+        let arr1 = [3, 4, 10, -5];
+        console.log("We see next elements of array : " , showFewValues(arr1));
+        a = 2;
+        console.log("We see next elements of array : ", showFewValues(arr1, a));
+        a = 8;
+        console.log("We see next elements of array : ", showFewValues(arr1, a));
+        // a = 16;
+        // console.log("We see next elements of array : ", showFewValues(arr1, a));
+    </script>
+</body>
+</html>
