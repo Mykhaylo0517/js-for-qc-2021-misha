@@ -19,6 +19,8 @@ console.log("res3 = ", res3);      // true
 console.log(typeof res3);          // "boolean"
 
 let res4 = (x + "any string") * y;
+// or OTHER VERSION from teacher
+// let res4 = parseFloat(Boolean(x));
 console.log("res4 = ", res4);      // NaN
 console.log(typeof res4);          // "number"
 
@@ -60,6 +62,15 @@ arrNew.shift(1);
 document.writeln("Updated array is : ", arrNew);
 console.log("New array is : ", arrNew.length, arrNew);  
 
+// ********************  Task 3 (FROM THE TEACHER) **************************
+let arr = [];
+arr.push(12, "java", true, null);
+console.log(arr.length);
+arr[4] = prompt("Choose a value");
+console.log(arr[4]);
+arr.shift();
+console.log(arr);
+
 // ********************  Task 4 **************************
 
 let cities = ["Rome", "Lviv", "Warsaw"];
@@ -69,6 +80,20 @@ tmpValue = tmpValue + "*" + cities[2];
 document.writeln("result is : ", tmpValue);
 console.log("result is : ", tmpValue, typeof tmpValue);
 console.log("new value is : ", typeof tmpValue);
+
+// ********************  Task 4 (FROM THE TEACHER) **************************
+// Var.1 (used methos JOIN)
+let cities = ["Rome", "Lviv", "Warsaw"];
+cities = cities.join(" * ");
+console.log(cities);
+
+// Var.2
+let cities = ["Rome", "Lviv", "Warsaw"];
+let res = [];
+res = cities.reduce(function(sum, i) {
+    return [sum + "*" + i];
+    })
+console.log(res);
 
 // ********************  Task 5 **************************
 
@@ -81,7 +106,16 @@ let isAdult = prompt("Enter your age as a number:", "0..10, 11..18, 19..99");
                     } else {
                             console.log("You are still too young."); 
                         }
-            }
+    }
+// ********************  Task 5 (FROM THE TEACHER) **************************            
+let isAdult = Number(prompt("What is your age?"));
+if (isAdult >= 18) {
+    alert("You are an adult!");
+} else if (isAdult < 18) {
+    alert("You are too young!");
+} else {
+    alert("Wrong value!!!");
+}
 
 // ********************  Task 6 **************************
 
@@ -109,6 +143,27 @@ if (sideA+sideB>=sideC && sideB+sideC>=sideA && sideA+sideC>=sideB && sideA>0 &&
     else {
         console.log("Incorrect data.");
         }    
+
+// ********************  Task 6 (FROM THE TEACHER) **************************
+let a = Number(prompt("Set a value for first side")); 
+let b = Number(prompt("Set a value for Second side"));
+let c = Number(prompt("Set a value for THIRD side"));
+// calculating area
+if (a>0 && b>0 && c>0) {
+    let p = (a+b+c)/2;
+    let triangleArea = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+    console.log("Triangle area is = " + triangleArea.toFixed(3));
+}
+else {
+    alert("incorrect data!'");
+}
+// Checking whether the triangle is right-angled
+if ((a*a + b*b === c*c) || (b*b+c*c === a*a) || (c*c+a*a === b*b)) {
+    console.log("Triangle is right-angeled");
+}
+else {
+    console.log("Triangle is NOT right-angeled");
+}
 
 // ********************  Task 7 **************************
 

@@ -10,23 +10,32 @@ for (let i = 0; i < arrNew.length; i++) {
 }
 console.log("Result by FOR = ", multiplFor);  //  Result = 120
 
-// by while
+// by do-while
 let multiplWhile = 1;
 let j = 0;
 do { 
     multiplWhile = multiplWhile * arrNew[j];
     j++;
 } while (j < arrNew.length) 
-console.log("Result by WHILE = ", multiplWhile);  //  Result = 120
+console.log("Result by DO-WHILE = ", multiplWhile);  //  Result = 120
+
+// by while
+let j = 0;
+let result3 = 1;
+while (j < arr.lenght) {
+    result3 *= arr[j];
+    j++;
+}
+console.log("Result by WHILE = ", result3);  //  Result = 120
 
 // ********************  Task 2 **************************
 
 for (let i = 0; i <= 15; i++) {
     if ((i % 2) == 0) {
         console.log(i + " is even" );
-        } else { 
-            console.log(i + " is odd" );
-            }
+    } else { 
+        console.log(i + " is odd" );
+    }
 }
 
 // ********************  Task 3 **************************
@@ -57,6 +66,17 @@ function randArrayNew(x) {
 }
 randArrayNew(8);
 
+// ********************  Task 3 (FROM THE TEACHER) **************************
+function randArray(k) {
+    let arr = [];
+    for (let i = 0; i < k; i++) {
+        arr [i] = Math.floor(Math.random() * 500) +1; 
+    }
+    console.log(arr);
+}
+randArray(5);
+
+
 // ********************  Task 4 **************************
 
 function raiseToDegree(x,y) {
@@ -76,6 +96,22 @@ while ((!Number.isInteger(b)) || (b < 0)) {
 }
 // rai33seToDegree(a, b);   - why this result is UNDEFINE?
 console.log(a + " ** " + b + " = " + raiseToDegree(a,b));
+
+// ********************  Task 4 (FROM THE TEACHER) **************************
+function raiseToDegree(a, b) {
+    let result = a;
+    for (let i = 1; i < b; i++) {
+        result *=a;
+    }
+    return result;
+}
+let a = prompt("a?", '');
+let b = prompt("b?", '');
+if (b , 1) {
+    console.log("Degree ${b} not supported, please use natural number");    
+} else {
+    console.log(raiseToDegree(a, b));
+}
 
 // ********************  Task 5 **************************
 
@@ -117,6 +153,19 @@ let arr2 = [1, 2, 3, 5, 11];
 console.log(arr1 + " array contains only uniques elements -- " + findUnique(arr1));
 console.log(arr2 + " array contains only uniques elements -- " + findUnique(arr2));
 
+// ********************  Task 6 (FROM THE TEACHER) **************************
+function findUnique(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = (i + 1); j < arr.length; j++){
+            if (arr[i] === arr[j]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+console.log(findUnique([1, 2, 3, 5, 3]));
+
 // ********************  Task 7 **************************
 
 function showFewValues(arr, b = 1) {
@@ -145,6 +194,19 @@ a = 8;
 console.log("We see next elements of array : ", showFewValues(arr1, a));
 // a = 16;
 // console.log("We see next elements of array : ", showFewValues(arr1, a));
+
+// ********************  Task 7 (FROM THE TEACHER) **************************
+function lastElem(arr, count) {
+    if (count == null) {
+        console.log(arr.pop())
+        } 
+        else {
+            console.log(arr.slice(-count));
+        }
+    }
+console.log( lastElem([3, 4, 10, -5]) );
+console.log( lastElem([3, 4, 10, -5], 2));
+console.log( lastElem([3, 4, 10, -5], 8));
 
 // ********************  Task 8 **************************
 
@@ -180,5 +242,16 @@ console.log("The text after convertation is : ", convertFun(strStart));
 strStart = "i       love5454 4556 java script";
 console.log("The first text : ", strStart);
 console.log("The text after convertation is : ", convertFun(strStart));
+
+// ********************  Task 8 (FROM THE TEACHER) **************************
+function bigFirstLetter(str) {
+    let arr = str.split(" ");
+    let newarr = [];
+    for (let i = 0; i <arr.length; i++) {
+        newarr.push(arr[i].charAt(0).toUpperCase()+arr[i].slice(1));
+    }
+    return newarr.join(" ");
+    }
+    console.log(bigFirstLetter("i love java script"));
 
 // The solution of tasks for the Lecture-03 is completed

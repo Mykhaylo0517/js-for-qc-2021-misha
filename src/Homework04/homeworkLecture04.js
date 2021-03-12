@@ -19,7 +19,7 @@ function calcRectangleArea(widthFun, heightFun) {
     return square;
     }
     
-// input two positive numbers
+// input two values for calculation of the square of ​​the rectangle
 let width;
 let height;
 width = Number(prompt("Input the width of the rectangle: ", ""));
@@ -30,23 +30,40 @@ console.log("Calculation of the square of ​​the rectangle for ", width,
 
 // ********************  Task 2 **************************
 
+function checkAge() {
+    let age1 = prompt("Enter your age :", "");
+    let age = Number(age1);
+    if (age1.length == 0) {
+        alert("The field is empty! Please enter your age.");
+        throw new Error("The field is empty! Please enter your age.");
+    } else if (age <= 14) {
+        alert("Your age is less than 14 years!");
+        throw new Error("Your age is less than 14 years!");
+    } else if (Number.isNaN(age)) {
+        alert("You have entered a non-numeric value.");
+        throw new Error("You have entered a non-numeric value.");
+    }
+    return age;
+    }
+
+try {
+    let accessFilm = checkAge();
+    alert("You have to access to this film.");
+    console.log("You have to access to this film.");
+} catch (exception) {
+    console.log(exception.name);
+    console.log(exception.message);
+    console.log(exception.stack);
+} 
 
 // ********************  Task 3 **************************
+
 
 
 // ********************  Task 4 **************************
 
 
-// ********************  Task 5 **************************
 
-
-// ********************  Task 6 **************************
-
-
-// ********************  Task 7 **************************
-
-
-// ********************  Task 8 **************************
 
 
 // The solution of tasks for the Lecture-04 is completed

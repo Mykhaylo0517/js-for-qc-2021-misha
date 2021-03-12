@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script>
+    function checkAge() {
+        let age1 = prompt("Enter your age :", "");
+        let age = Number(age1);
+        if (age1.length == 0) {
+            alert("The field is empty! Please enter your age.");
+            throw new Error("The field is empty! Please enter your age.");
+        } else if (age <= 14) {
+            alert("Your age is less than 14 years!");
+            throw new Error("Your age is less than 14 years!");
+        } else if (Number.isNaN(age)) {
+            alert("You have entered a non-numeric value.");
+            throw new Error("You have entered a non-numeric value.");
+        }
+        return age;
+        }
+
+    try {
+        let accessFilm = checkAge();
+        alert("You have to access to this film.");
+        console.log("You have to access to this film.");
+    } catch (exception) {
+        console.log(exception.name);
+        console.log(exception.message);
+        console.log(exception.stack);
+    }       
+    </script>
+</body>
+</html>
