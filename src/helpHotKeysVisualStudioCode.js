@@ -5,7 +5,6 @@
 
 // ************************************************************
 
-
 // add comments on a line:
     Ctrl + /
 // add comments for several lines:
@@ -28,3 +27,15 @@
     Alt + Z
 // Enable Zen mode - without panels (go to back - press Escape)
     Ctrl + K Z
+
+// DEBUGGING methods:
+// 1. JavaScript Validator: http://www.jslint.com/
+// 2. console.log(), alert (),  document.write() methods
+// 3. debuger;  --  in code
+// 4.1. setting breakpoint in Inspect Mode
+// 4.2. conditinal breakpoint (?  -> if) in Inspect Mode
+
+// ERRORS:
+// 1. Syntax errors                 --> Uncaught SyntaxError: ...
+// 2. Runtime errors - exceptions   --> Uncaught ReferenceError:  ...
+// 3. Logical errors -

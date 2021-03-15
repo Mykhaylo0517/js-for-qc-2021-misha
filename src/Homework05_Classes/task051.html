@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script> 
+        function propsCount(currentObject) {
+            let propsCount = 0;
+            propsCount = Object.keys(currentObject).length;
+            return propsCount;
+        }
+        
+        let mentor = { 
+            course: "JS fundamental", 
+            duration: 3,
+            direction: "web-development" 
+        };    
+        console.log(propsCount(mentor));
+
+        let mentorBig = { 
+            course: "JS fundamental", 
+            duration: 3,
+            direction: "web-development",
+            id4: 4,
+            id5: 5, 
+            age: "33"
+        };
+        console.log(propsCount(mentorBig));
+
+        let mentorEmpty = {};
+        console.log(propsCount(mentorEmpty));
+    </script>
+</body>
+</html>

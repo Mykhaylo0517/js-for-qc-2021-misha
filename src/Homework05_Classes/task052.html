@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script> 
+        function showProps(obj) {
+            console.log(Object.keys(obj));
+            let newId = Object.keys(obj);
+            let j = Object.keys(obj).length;
+            let ids;
+            let newAr = [];
+            for (let i = 0; i < j; i++) {
+                ids = newId[i];
+                newAr[i] = obj[ids];
+            }
+            console.log(newAr);
+        }
+        
+        let obj1 = { 
+            id1: "JS fundamental", 
+            id2: 3,
+            id3: true,
+            id4: NaN,
+            id5: null, 
+        };
+        showProps(obj1);
+    </script>
+</body>
+</html>
