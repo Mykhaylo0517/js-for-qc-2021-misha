@@ -6,79 +6,100 @@
 </head>
 <body>    
     <script> 
-        "use strict"
         class Worker {
+            #experience = 1.2;
             constructor(fullName, dayRate, workingDays) {
                 this.fullName = fullName;
                 this.dayRate = dayRate;
-                this.workingDays = workingDays;                
+                this.workingDays = workingDays;
             }
             showSalary() {
-                let s = this.dayRate * this.workingDays;
-                console.log(this.fullName + " salary: " + s);
+                // let s = this.dayRate * this.workingDays;
+                // console.log(this.fullName + " salary: " + s);
+                console.log(`${this.fullName}  salary: ${this.dayRate * this.workingDays}`)
             }
-         
-            
-        // In progress .......
-            #experience = 1.2;    
             showSalaryWithExperience() {
-                get showExp()                 
-                    showExp = (this.dayRate * this.workingDays) * #experience; 
-                    return showExp;
-                }
-                set showExp(value) {
-                    this.showExp = showSalary * value;
-                return showExp;
+                let sEx = this.dayRate * this.workingDays * this.#experience;
+                console.log(this.fullName + " salary: " + sEx);
+            }
+            get showExp() { return this.#experience; }
+            set setExp(experience) { 
+                try {
+                    if (experience <= this.#experience) throw new Error("the value of experience has not increased... ((( ");
+                } catch (error) {
+                    console.log("Maybe need to think about change my job... )))", error.s);
+                    console.log(error.name);
+                    console.log(error.message);
+                    console.log(error.stack);
+                } finally {
+                    this.#experience = experience; 
+                }                
+            }
+            exSalary() {
+                return `${this.dayRate * this.workingDays * this.#experience}`;
             }
         }
-    
-                    
-
-        let worker1 = new Worker("John Johnson", 20, 23);
-        console.log(worker1.fullName);                 
-        worker1.showSalary();
-        console.log("New experience: " + worker1.showExp);
-        // worker1.showSalaryWithExperience();
-        // worker1.setExp = 1.5;
-        // console.log("New experience: " + worker1.showExp);
-        // worker1.showSalaryWithExperience();
-
-        let worker2 = new Worker("Tom Tomson", 48, 22);
-        console.log(worker2.fullName);                 
-        worker2.showSalary();
-        // console.log("New experience: " + worker2.showExp);
-        // worker2.showSalaryWithExperience();
-        // worker2.setExp = 1.5;
-        // console.log("New experience: " + worker2.showExp);
-        // worker2.showSalaryWithExperience();
+   
+    function sortSalaries(wokerArray) {
+        let sortedSalary = [];
+        sortedSalary = workersArray.sort(function(a,b) {
+            return a.exSalary() - b.exSalary();            
+        })
+        console.log("Sorted salary: ");
+        for (let i = 0; i < sortedSalary.length; i++) {
+            console.log(sortedSalary[i].fullName + ": " + sortedSalary[i].exSalary());
+        }
+    }
         
-        let worker3 = new Worker("Andy Ander", 29, 23);
-        console.log(worker3.fullName);                 
-        worker3.showSalary();
-        // console.log("New experience: " + worker3.showExp);
-        // worker3.showSalaryWithExperience();
-        // worker3.setExp = 1.5;
-        // console.log("New experience: " + worker3.showExp);
-        // worker3.showSalaryWithExperience();. . . . . .
+    let worker1 = new Worker("John Johnson", 20, 23);
+    console.log(worker1.fullName);                 
+    worker1.showSalary();
+    console.log("New experience: " + worker1.showExp);
+    worker1.showSalaryWithExperience();
+    worker1.setExp = 1.5;
+    console.log("New experience: " + worker1.showExp);
+    worker1.showSalaryWithExperience();
+    console.log(" >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ");
 
-        // Output example:
-        // John Johnson
-        // John Johnson salary: 460
-        // New experience: 1.2
-        // John Johnson salary: 552
-        // New experience: 1.5
-        // John Johnson salary: 690
+    let worker2 = new Worker("Tom Tomson", 48, 22);
+    console.log(worker2.fullName);                 
+    worker2.showSalary();
+    console.log("New experience: " + worker2.showExp);
+    worker2.showSalaryWithExperience();
+    worker2.setExp = 1.5;
+    console.log("New experience: " + worker2.showExp);
+    worker2.showSalaryWithExperience();
+    console.log(" >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ");
+    
+    let worker3 = new Worker("Andy Ander", 29, 23);
+    console.log(worker3.fullName);                 
+    worker3.showSalary();
+    console.log("New experience: " + worker3.showExp);
+    worker3.showSalaryWithExperience();
+    worker3.setExp = 1.1;  // new value for exeption
+    console.log("New experience: " + worker3.showExp);
+    worker3.showSalaryWithExperience();
+    console.log("  <><><><><><><><><><><><><><>  ");
 
-        // Tom Tomson
-        // Tom Tomson salary: 1056
-        // . . . . . .
+    let workersArray = [worker1, worker2, worker3];
+    sortSalaries(workersArray);
 
-        // Sorted salary:
-        // John Johnson: 690
-        // Andy Ander: 1000.5
-        // Tom Tomson: 1584
+    // Output example:
+    // John Johnson
+    // John Johnson salary: 460
+    // New experience: 1.2
+    // John Johnson salary: 552
+    // New experience: 1.5
+    // John Johnson salary: 690
 
+    // Tom Tomson
+    // Tom Tomson salary: 1056
+    // . . . . . .
 
+    // Sorted salary:
+    // John Johnson: 690
+    // Andy Ander: 1000.5
+    // Tom Tomson: 1584
     </script>
 </body>
 </html>

@@ -85,6 +85,15 @@ console.log( myObj.hasOwnProperty("myProperty3") );   // false
 
 
 // CLASSES...
+class MyClass {
+    // методы класса
+    constructor() { valuee1, value2 }
+    method1() { code1 }
+    method2() { code2 }
+    method3() { code3 }
+    code4;
+}
+// 
 class Student {
     constructor(name) {
       this.name = name;
@@ -280,7 +289,6 @@ coffeeMachine.#waterLimit = 1000; // Error
 
 
 
-
 class CoffeeMachine {
     #waterLimit = 200;
     get waterLimit() {    
@@ -296,5 +304,3 @@ let coffeeMachine = new CoffeeMachine();
 coffeeMachine.checkWater(); 
 // can't access privates from outside of the class
 coffeeMachine.waterLimit = 1200; 
-
-
