@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script> 
+        class GeometricFigure {	
+            getArea() {	
+                return 0;
+            }
+            toString() {
+                return Object.getPrototypeOf(this).constructor.name;
+            }
+        }
+        // Your code . . . 
+
+        
+        function handleFigures(figures) {
+        
+        }
+
+        const figures = [new Triangle(4, 5), new Square(7), new Circle(5)];
+    	console.log(handleFigures(figures));
+
+        // Output example:
+        // Geometric figure: Triangle - area: 10
+        // Geometric figure: Square - area: 49
+        // Geometric figure: Circle - area: 78.53981633974483
+        // 137.53981633974485 // total area
+
+
+    </script>
+</body>
+</html>
