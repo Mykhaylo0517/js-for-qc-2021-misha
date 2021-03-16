@@ -50,8 +50,48 @@ let obj1 = {
 };
 showProps(obj1);
 
-// ********************  Task 3 **************************
+let obj2 = {};
+showProps(obj2);
 
+let obj3 = { 
+    id1: "JS fundamental", 
+    id3: 3,
+    id4: true,
+    id5: NaN,
+    id2: null, 
+    id_7: 777
+};
+showProps(obj3);
+
+// ********************  Task 3 **************************
+class Person {
+    constructor(name, surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+    showFullName () {
+    showFullName = this.surname + " " + this.name;
+    }
+}
+class Student extends Person {
+    constructor(name, surname, year) {
+        super(name, surname);
+        this.year = year;
+    }
+    showCourse() {
+        let date = new Date();
+        let yearCurrent = date.getFullYear();
+        let course = yearCurrent - this.year + 1;
+        return course;
+    }            
+    showFullName (midleName) {
+        let s = this.surname + " " + this.name + " " + midleName;
+        return s;
+    }
+}
+let stud1 = new Student("Petro", "Petrenko", 2015);
+console.log(stud1.showFullName("Petrovych"));         // Petrenko Petro Petrovych
+console.log("Current course: " + stud1.showCourse()); //Current course: 5
 
 // ********************  Task 4 **************************
 
