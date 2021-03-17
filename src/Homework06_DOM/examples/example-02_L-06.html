@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <div class="test2"></div>
+    <p id="test" class="test2"></p>
+    <p class="test2"></p>
+    <p></p>
+    <input type="text" />
+    <input type="radio" />
+    <script>
+        // Element search methods
+        let id = document.getElementById("test");
+        let classe = document.getElementsByClassName("test2");
+        let tag = document.getElementsByTagName("p");
+        let x = document.querySelectorAll("div.test2");
+        let y = document.querySelector("p.test2");
+        console.log(id);
+        console.log(classe);
+        console.log(tag);
+        console.log(x);
+        console.log(y);
+    </script>
+</body>
+</html>

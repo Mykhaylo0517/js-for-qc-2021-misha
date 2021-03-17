@@ -152,6 +152,83 @@ console.log(stud2.showFullName("Ivanovych"));
 console.log("Current course: " + stud2.showCourse()); //Current course: 5
 
 // ********************  Task 4 **************************
+class Worker {
+    #experience = 1.2;
+    constructor(fullName, dayRate, workingDays) {
+        this.fullName = fullName;
+        this.dayRate = dayRate;
+        this.workingDays = workingDays;
+    }
+    showSalary() {
+        // let s = this.dayRate * this.workingDays;
+        // console.log(this.fullName + " salary: " + s);
+        console.log(`${this.fullName}  salary: ${this.dayRate * this.workingDays}`)
+    }
+    showSalaryWithExperience() {
+        let sEx = this.dayRate * this.workingDays * this.#experience;
+        console.log(this.fullName + " salary: " + sEx);
+    }
+    get showExp() { return this.#experience; }
+    set setExp(experience) { 
+        try {
+            if (experience <= this.#experience) throw new Error("the value of experience has not increased... ((( ");
+        } catch (error) {
+            console.log("Maybe need to think about change my job... )))", error.s);
+            console.log(error.name);
+            console.log(error.message);
+            console.log(error.stack);
+        } finally {
+            this.#experience = experience; 
+        }                
+    }
+    exSalary() {
+        return `${this.dayRate * this.workingDays * this.#experience}`;
+    }
+}
+
+function sortSalaries(wokerArray) {
+    let sortedSalary = [];
+    sortedSalary = workersArray.sort(function(a,b) {
+        return a.exSalary() - b.exSalary();            
+    })
+    console.log("Sorted salary: ");
+    for (let i = 0; i < sortedSalary.length; i++) {
+        console.log(sortedSalary[i].fullName + ": " + sortedSalary[i].exSalary());
+    }
+}
+
+let worker1 = new Worker("John Johnson", 20, 23);
+console.log(worker1.fullName);                 
+worker1.showSalary();
+console.log("New experience: " + worker1.showExp);
+worker1.showSalaryWithExperience();
+worker1.setExp = 1.5;
+console.log("New experience: " + worker1.showExp);
+worker1.showSalaryWithExperience();
+console.log(" >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ");
+
+let worker2 = new Worker("Tom Tomson", 48, 22);
+console.log(worker2.fullName);                 
+worker2.showSalary();
+console.log("New experience: " + worker2.showExp);
+worker2.showSalaryWithExperience();
+worker2.setExp = 1.5;
+console.log("New experience: " + worker2.showExp);
+worker2.showSalaryWithExperience();
+console.log(" >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ");
+
+let worker3 = new Worker("Andy Ander", 29, 23);
+console.log(worker3.fullName);                 
+worker3.showSalary();
+console.log("New experience: " + worker3.showExp);
+worker3.showSalaryWithExperience();
+worker3.setExp = 1.1;  // new value for exeption
+console.log("New experience: " + worker3.showExp);
+worker3.showSalaryWithExperience();
+console.log("  <><><><><><><><><><><><><><>  ");
+
+let workersArray = [worker1, worker2, worker3];
+sortSalaries(workersArray);
 
 // ********************  Task 4 (FROM THE TEACHER)    **************************
 class Worker {
@@ -225,13 +302,63 @@ worker3.sortSalaries(workersArray);
 // ********************  Task 5 **************************
 
 
-// ********************  Task 6 **************************
+// ********************  Task 5  (FROM THE TEACHER)      **************************
+class GeometricFigure {	
+    getArea() {	
+        return 0;
+    }
+    toString() {
+        return Object.getPrototypeOf(this).constructor.name;
+    }
+}
+// Your code ... 
+class Triangle extends GeometricFigure {
+    constructor(b, h) {
+        super();
+        this.base = b;
+        this.height = h;
+    }
+    getArea() {
+        return this.base * this.height / 2;
+    }
+}
+class Square extends GeometricFigure {
+    constructor(a) {
+        super();
+        this.side = a;
+    }
+    getArea() {
+        return this.side ** 2;
+    }
+}
+class Circle extends GeometricFigure {
+    constructor(r) {
+        super();
+        this.radius = r;
+    }
+    getArea() {
+        return Math.PI * this.radius ** 2;
+    }
+}
 
+function handleFigures(figures) {
+    return figures.reduce(function(sum,figure){
+        if (figure instanceof GeometricFigure) {
+            console.log(`Geometric figure: ${figure.toString()} - area : ${figure.getArea()}`);
+            return sum + figure.getArea()
+        }
+        throw Error('Bad argument figure.');
+    }, 0);
+}
 
-// ********************  Task 7 **************************
+const figures = [new Triangle(4, 5), new Square(7), new Circle(5)];
+console.log(handleFigures(figures));
 
-
-// ********************  Task 8 **************************
+// Output example:
+// Geometric figure: Triangle - area: 10
+// Geometric figure: Square - area: 49
+// Geometric figure: Circle - area: 78.53981633974483
+// 137.53981633974485 // total area
 
 
 // The solution of tasks for the Lecture-05 is completed
