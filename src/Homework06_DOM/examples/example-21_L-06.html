@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <!-- 
+        Removing and replacing nodes:
+            node.remove() –  removes the node from the DOM tree
+            parentElem.removeChild(elem) – removes "elem" from the list of children "parentElem"
+            parentElem.replaceChild(elem, currentElem) – among children, "parentElem" replaces "currentElem" with "elem"
+    -->
+    <div id="box">
+        <div id="one">1</div>
+        <div id="two">2</div>
+        <div id="three">3</div>
+    </div>
+    <script>
+        let elem = document.querySelector("#one");
+        elem.remove();
+        alert(document.querySelector("#box").innerHTML); // #One block disappeared
+        let parent = document.querySelector("#box");
+        let child = document.querySelector("#three");
+        parent.removeChild(child);
+        alert(document.querySelector("#box").innerHTML); // #Three block disappeared
+    </script>
+</body>
+</html>

@@ -12,5 +12,13 @@
         <p>Third paragraph</p>
       </div>
 	<p>Another text</p>
+
+  <!-- my code -->
+  <script>
+    let bodyNodes = document.getElementById("text").childNodes;
+    for (let i = 0; i < (bodyNodes.length/2-1); i++) {
+      console.log(`Selector text ${i} :`, document.getElementsByTagName("p")[i].innerHTML);      
+    }
+  </script>
 </body>
 </html>

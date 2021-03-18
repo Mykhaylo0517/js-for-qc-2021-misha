@@ -6,5 +6,22 @@
 </head>
 <body>
 	<div id="test">First</div>
+    <script>
+        let ids = document.getElementById("test");
+        let tags = document.getElementsByTagName("div");
+        console.log(ids);
+        console.log(tags);
+        
+        // Method № 1
+        // document.getElementById("test").innerHTML = "Last";
+
+        // Method № 2
+        let element = document.getElementById("test");
+        element.innerHTML = "Last";
+
+        // Method № 3
+        //document.body.innerHTML = "Last";
+        
+    </script>
 </body>
 </html>

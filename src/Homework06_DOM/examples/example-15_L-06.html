@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body><!-- Comment-->
+    <input type="text" id="my-input" class="my-class" value="my-value" />
+    <script>
+        let myInput = document.getElementById("my-input");
+        alert(myInput.type); // text
+        alert(myInput.id); // my-input
+        alert(myInput.className) // my-class !!!  Not .class, but .className
+        alert(myInput.value); // "my-value"
+    </script>
+    <!--
+        - value - value for "input", "select" or "textarea“
+        - id – identifier
+        - className - class
+        - href - link address
+    -->
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <div id="first">Main block here</div>
+    <div id="second"></div>
+    <div id="therth"></div>
+    <script>
+        document.getElementById("second").innerHTML = document.getElementById("first").nodeType;   // 1 - ELEMENT_NODE
+        document.getElementById("therth").innerHTML = document.getElementById("first").tagName;
+    </script>
+</body>
+</html>

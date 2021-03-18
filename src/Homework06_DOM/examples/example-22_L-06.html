@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <!-- 
+        Change element style:
+            elem.classList.add/remove("class") – add / remove class.
+            elem.classList.toggle("class") – add a class, if not, otherwise delete.
+            elem.classList.contains("class") – checking for a class, returns true / false
+    -->
+    <div id="article1" class="article">HAHAHA</div>
+    <script>
+        let articleDiv = document.querySelector("div.article");
+        articleDiv.classList.remove("article"); // delete class
+        articleDiv.classList.add("blueStyle"); // add class
+        articleDiv.classList.toggle("article"); // switch class
+    </script>
+</body>
+</html>

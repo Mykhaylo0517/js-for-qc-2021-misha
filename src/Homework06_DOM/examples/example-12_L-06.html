@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <div id="hi">Hello <b>World</b></div>
+    <script>
+       let d = document.body.children[0];
+       alert(d.outerHTML); // <div id="hi">Hello <b>World</b></div>
+       d.outerHTML = "<p>New HTML!</p>";
+       alert(d.tagName);    // DIV
+       alert(d.innerHTML);  // Hello <b>World</b </b>
+     </script>
+</body>
+</html>

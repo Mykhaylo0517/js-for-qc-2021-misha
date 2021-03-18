@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body><!-- Comment-->
+    <ol id="ol">
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+    </ol>
+    <script>
+        ol.before('before'); // insert the string "before" before <ol>
+        
+        ol.after('after'); // insert the string "after" after <ol>
+        
+        let liFirst = document.createElement('li');
+        liFirst.innerHTML = 'prepend';
+        ol.prepend(liFirst); // insert liFirst at the beginning of <ol>
+        
+        let liLast = document.createElement('li');
+        liLast.innerHTML = 'append';
+        ol.append(liLast); // insert liLast at the end of the <ol>
+    </script>    
+</body>
+</html>

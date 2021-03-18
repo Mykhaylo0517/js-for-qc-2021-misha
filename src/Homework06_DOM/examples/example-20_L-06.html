@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <!-- 
+        Node Attributes:
+            hasAttribute(name) – checks for an attribute
+            getAttribute(name) – gets attribute value
+            setAttribute(name, value) – sets attribute
+            removeAttribute(name) – removes attribute
+    -->
+    <p id="item" infoo="JavaScript">Some text</p>
+    <script>
+        alert(item.getAttribute('infoo') ); // (1) 'JavaScript', reading
+        item.setAttribute('Example', 111); // (2), writing
+        alert(item.outerHTML ); // (3), check if there is an attribute in HTML (yes)
+    </script>
+</body>
+</html>

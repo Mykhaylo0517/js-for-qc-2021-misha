@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body><!-- Comment-->
+    <script>
+       // for comment
+       alert(document.body.firstChild.nodeName);  // #comment
+       alert(document.body.firstChild.tagName);  // undefined
+       // for a document
+       alert(document.nodeName);  // #document
+       alert(document.tagName);  // undefined, because DOM root is not an element
+    
+        alert(document.body.nodeName);  // BODY
+        alert(document.body.tagName);     // BODY
+
+    // The "nodeName" property is defined for many types of DOM nodes
+    // The "tagName" property is in elements only
+    </script>
+</body>
+</html>

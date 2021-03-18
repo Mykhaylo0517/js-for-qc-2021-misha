@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <form name="registerForm">
+       <input name="surname" value="1" />
+       <input name="email" value="2" />
+    </form>
+    <script>
+       let myForm = document.forms.registerForm;
+       let elem = myForm.elements.surname;
+       alert(elem.value); // 1
+    </script>
+</body>
+</html>

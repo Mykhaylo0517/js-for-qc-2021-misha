@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body><!-- Comment-->
+    <div>
+        <span>Big text here!</span>
+    </div>
+    <script>
+        let spanElem = document.getElementsByTagName("span")[0];
+        let newSpan = spanElem.cloneNode(true);  // clone node
+        console.log(newSpan.innerHTML); // Big text here!
+        newSpan.innerHTML = "Another text here!";
+        console.log(newSpan.innerHTML); // Another text here!
+    </script>
+    <!-- elem.cloneNode(true) - creates a "deep" clone of the element, with all attributes and child elements
+         elem.cloneNode(false) - creates a clone without children. 
+    -->    
+</body>
+</html>
