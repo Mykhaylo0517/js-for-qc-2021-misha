@@ -28,10 +28,6 @@ hs_err_pid*
 ##################
 # NEW IGNORE FILES
 
-# Config Files
-*.ini
-
-
 # Binary Files
 *.dat
 
@@ -94,7 +90,6 @@ hs_err_pid*
 # Ignore Picture
 *.bmp
 #*.png
-*.jpg
 *.jpeg
 
 # Ignore doc/notes.txt, but not doc/info/arch.txt
