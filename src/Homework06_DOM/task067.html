@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+  <script>
+    // creating
+    let newMain = document.createElement("main"); 
+    newMain.className = "mainClass check item";
+
+    let newDiv = document.createElement("div"); 
+    newDiv.id = "myDiv";
+
+    let newP = document.createElement("p");
+    newP.innerHTML = "First paragraph";
+
+    // insert new tags
+    document.body.appendChild(newMain);
+    newMain.appendChild(newDiv);
+    newDiv.appendChild(newP);
+  </script>
+</body>
+</html>
