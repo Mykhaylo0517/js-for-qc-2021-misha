@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+  <input type="text" id="input1" value="Text1">
+  <input type="text" id="input2" value="Text2">
+<script>
+    // input messages
+    let firstMessage = prompt("Please, enter FIRST message... ", "first message");
+    let secondMessage = prompt("Please, enter FIRST message... ", "2 message");
+    
+    // change text into the forms
+    document.querySelector("#input1").value = firstMessage;
+    document.querySelector("#input2").value = secondMessage;
+  </script>
+</body>
+</html>
