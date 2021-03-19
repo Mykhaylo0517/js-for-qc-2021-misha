@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+    <ul id="list">
+      <li id="id1">1</li>
+      <li id="id2">2</li>
+      <li id="id3">3</li>
+      <li id="id4">4</li>
+      <li id="id5">5</li>
+  </ul>
+  
+  <!-- my code -->
+  <script>
+      // Method 1
+      let bodyElements = document.getElementsByTagName("li");
+      // console.log(bodyElements);
+      console.log(bodyElements[0].innerHTML, ",", bodyElements[4].innerHTML, ",", bodyElements[1].innerHTML, ",", 
+          bodyElements[3].innerHTML, ",", bodyElements[2].innerHTML);
+      
+      // Method 2
+      // console.log(document.body.firstElementChild.firstElementChild.innerHTML);  // 1
+      // console.log(document.body.firstElementChild.lastElementChild.innerHTML);   // 5
+      // console.log(document.body.firstElementChild.firstElementChild.nextElementSibling.innerHTML);   // 2
+      // console.log(document.body.firstElementChild.lastElementChild.previousElementSibling.innerHTML);   // 4
+      // console.log(document.body.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.innerHTML);   // 3
+      
+      console.log(document.body.firstElementChild.firstElementChild.innerHTML, ",",
+          document.body.firstElementChild.lastElementChild.innerHTML, ",",
+          document.body.firstElementChild.firstElementChild.nextElementSibling.innerHTML, ",",
+          document.body.firstElementChild.lastElementChild.previousElementSibling.innerHTML, ",",
+          document.body.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.innerHTML);   // 1, 5, 2, 4, 3
+  </script>
+</body>
+</html>

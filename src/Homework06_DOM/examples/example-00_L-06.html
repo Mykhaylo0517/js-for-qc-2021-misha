@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <!-- DOM tree  -->
+    <h1>My header</h1>
+    <a href="#">My link</a>
+    <script>
+        console.log("1 :", document.documentElement);
+        console.log("2 :", document.body);
+        console.log("3 :", document.body.firstChild);
+        console.log("4 :", document.body.firstChild.nextSibling);
+        console.log("5 :", document.body.firstChild.nextSibling.nextSibling.nextSibling);
+        console.log("6 :", document.body.firstChild.nextSibling.nextSibling.nextSibling.nextSibling);
+
+        console.log("7 :", document.body.lastChild);
+        console.log("8 :", document.body.previousSibling);
+        console.log("9 :", document.body.lastChild.parentNode);
+    </script>
+</body>
+</html>
