@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+  <h1>I'am a big header!!!</h1>
+  <div id="myDiv">
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+    <p>Fourth paragraph</p>
+  </div>
+  <ul id="myList">
+    <li>Make</li>
+    <li>me</li>
+    <li>horizontal!</li>
+  </ul>
+  <span>Make me invisible, please!</span>
+  
+  <!--  my code  -->
+  <script>
+    let hhh = document.getElementsByTagName("h1");   // Change background
+    hhh[0].style.backgroundColor = '#43ac2a';
+
+    let parElem = document.getElementsByTagName("p"); // paragraphs
+    parElem[0].style.fontWeight = 'bold';
+    parElem[1].style.color = 'red';
+    parElem[2].style.textDecoration = 'underline';
+    parElem[3].style.fontStyle = 'italic';
+    
+    let bodyElements = document.getElementsByTagName("li");
+    let stick = "";
+    for (let i = 0; i < bodyElements.length; i++) {
+      stick = stick + bodyElements[i].innerHTML;
+    }
+    
+    // delete several elements. Delete list
+    document.getElementsByTagName("ul")[0].remove();
+    
+    // delete several elements. Delete span
+    document.getElementsByTagName("span")[0].remove();
+    
+    // create new span
+    let divv = document.createElement('p');
+    divv.className = "new";
+    divv.innerHTML = "\t   " + stick;
+    divv.style.textAlign = 'center'; 
+    divv.style.width = '200px';
+    document.body.appendChild(divv);
+    
+  </script>
+</body>
+</html>
