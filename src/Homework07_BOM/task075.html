@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript (tasks from Lecture-07)</title>
+</head>
+<body>
+    <!-- new text when user works with button -->
+    <button type="button" id="myBtn">Live button!</button>
+    
+    <script>
+        const button = document.getElementById('myBtn');
+    
+        function eventForClick(){
+            let forClick = document.createElement('p');            
+            forClick.innerHTML = "I was pressed!";
+            document.body.append(forClick);
+        }
+        function eventForMouseHover(){
+            let forHover = document.createElement('p');
+            forHover.innerHTML = "Mouse on me!";
+            document.body.append(forHover);
+        }
+        function eventForMouseOutHover(){
+            let forHoverOut = document.createElement('p');
+            forHoverOut.innerHTML = "Mouse is not on me!";
+            document.body.append(forHoverOut);
+        }
+        button.addEventListener('click', eventForClick);
+        button.addEventListener('mouseover', eventForMouseHover);
+        button.addEventListener('mouseout', eventForMouseOutHover);
+    </script>
+</body>
+</html>
