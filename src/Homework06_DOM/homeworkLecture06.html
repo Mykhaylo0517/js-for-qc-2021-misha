@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript --- Practical task (Lecture 06)</title>
+</head>
+<body>
+
+// ********************  Task 1  **************************
+<div id="test">First</div>
+<script>
+    let ids = document.getElementById("test");
+    let tags = document.getElementsByTagName("div");
+    console.log(ids);
+    console.log(tags);
+
+    // Method № 1
+    // document.getElementById("test").innerHTML = "Last";
+
+    // Method № 2
+    let element = document.getElementById("test");
+    element.innerHTML = "Last";
+
+    // Method № 3
+    //document.body.innerHTML = "Last";
+</script>
+// ********************  Task 1 (FROM THE TEACHER)   **************************
+<div id="test">First</div>
+<script>
+    document.getElementById("test").innerHTML = "Last";  // Method 1
+    document.querySelector("test").innerHTML = "Last2";  // Method 2     
+</script>
+
+// ********************  Task 2 **************************
+<img class="image" src="dog.jpg">
+<script>
+    let element = document.getElementsByClassName("image");
+    element[0].src="cat.jpg";
+    alert("Changing the image from DOG to CAT!");
+    // ...
+</script>
+// ======================  Task 2 (FROM THE TEACHER)  ==============================>
+<img class="image" src="dog.jpg">
+<script>
+    let elem = document.getElementsByClassName("image")[0];
+    elem.src="cat.jpg";
+    alert("Changing the image from DOG to CAT!", elem.outerHTML);
+</script>
+
+// ********************  Task 3 **************************
+<h2>Article header</h2>
+<div id="text">
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+</div>
+<p>Another text</p>
+<!-- my code -->
+<script>
+let bodyNodes = document.getElementById("text").childNodes;
+for (let i = 0; i < (bodyNodes.length/2-1); i++) {
+    console.log(`Selector text ${i} :`, document.getElementsByTagName("p")[i].innerHTML);      
+}
+</script>
+// ======================  Task 3 (FROM THE TEACHER)  ==============================>
+<h2>Article header</h2>
+<div id="text">
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+</div>
+<p>Another text</p>
+<script>
+    let elemss = document.querySelectorAll("#text p");
+    // let elems = document.getElementById("text").childNodes;
+    for (let i = 0; i < elems.length; i++) {
+        console.log(`Selector text ${i} :`, elems[i].innerHTML);      
+    }
+</script>
+
+// ********************  Task 4 **************************
+<ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li id="id5">5</li>
+</ul>
+<script>
+    // Method 1
+    let bodyElements = document.getElementsByTagName("li");
+    console.log(bodyElements[0].innerHTML, ",", bodyElements[4].innerHTML, ",", bodyElements[1].innerHTML, ",", 
+        bodyElements[3].innerHTML, ",", bodyElements[2].innerHTML);
+    // Method 2
+    console.log(document.body.firstElementChild.firstElementChild.innerHTML, ",",
+        document.body.firstElementChild.lastElementChild.innerHTML, ",",
+        document.body.firstElementChild.firstElementChild.nextElementSibling.innerHTML, ",",
+        document.body.firstElementChild.lastElementChild.previousElementSibling.innerHTML, ",",
+        document.body.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.innerHTML);   // 1, 5, 2, 4, 3
+</script>
+// ======================  Task 4 (FROM THE TEACHER)  ==============================>
+<ul id="list"><li>1</li><li>2</li><li>3</li><li>4</li><li id="id5">5</li></ul>
+<script>
+    // Method 1
+    let parentEl = document.getElementsById("list");
+    let firstEl = parentEl.chilNodes[0].innerHTML;
+    let lastEl = parentEl.chilNodes[4].innerHTML;
+    let secondEl = parentEl.chilNodes[1].innerHTML;
+    let fourthEl = parentEl.chilNodes[3].innerHTML;
+    let thirdtEl = parentEl.chilNodes[2].innerHTML;
+
+    // Method 2
+    let firstEl = document.getElementsById("list").firstChild.innerHTML;
+    let lastEl = document.getElementsById("list").lastChild.innerHTML;
+    let secondEl = document.getElementsById("list").firstChild.nextSibling.innerHTML;
+    let fourthEl = document.getElementsById("list").lastChild.previousSibling.innerHTML;
+    let thirdtEl = document.getElementsById("list")..firstChild.nextSibling.nextSibling.innerHTML;
+
+    alert(firstEl);
+    alert(lastEl);
+    alert(secondEl);
+    alert(fourthEl);
+    alert(thirdtEl);
+</script>
+
+// ********************  Task 5 **************************
+<h1>I'am a big header!!!</h1>
+<div id="myDiv">
+  <p>First paragraph</p>
+  <p>Second paragraph</p>
+  <p>Third paragraph</p>
+  <p>Fourth paragraph</p>
+</div>
+<ul id="myList">
+  <li>Make</li>
+  <li>me</li>
+  <li>horizontal!</li>
+</ul>
+<span>Make me invisible, please!</span>
+<!--  my code  -->
+<script>
+  let hhh = document.getElementsByTagName("h1");   // Change background
+  hhh[0].style.backgroundColor = '#43ac2a';
+
+  let parElem = document.getElementsByTagName("p"); // paragraphs
+  parElem[0].style.fontWeight = 'bold';
+  parElem[1].style.color = 'red';
+  parElem[2].style.textDecoration = 'underline';
+  parElem[3].style.fontStyle = 'italic';
+  
+  let bodyElements = document.getElementsByTagName("li");
+  let stick = "";
+  for (let i = 0; i < bodyElements.length; i++) {
+    stick = stick + bodyElements[i].innerHTML;
+  }
+  
+  // delete several elements. Delete list
+  document.getElementsByTagName("ul")[0].remove();
+  
+  // delete several elements. Delete span
+  document.getElementsByTagName("span")[0].remove();
+  
+  // create new span
+  let divv = document.createElement('p');
+  divv.className = "new";
+  divv.innerHTML = "\t   " + stick;
+  divv.style.textAlign = 'center'; 
+  divv.style.width = '200px';
+  document.body.appendChild(divv);
+</script>
+// ======================  Task 5 (FROM THE TEACHER)  ==============================>
+<h1>I'am a big header!!!</h1>
+<div id="myDiv">
+  <p>First paragraph</p>
+  <p>Second paragraph</p>
+  <p>Third paragraph</p>
+  <p>Fourth paragraph</p>
+</div>
+<ul id="myList">
+  <li>Make</li>
+  <li>me</li>
+  <li>horizontal!</li>
+</ul>
+<span>Make me invisible, please!</span>
+<script>
+  document.body.children[0].style.backgroundColor = 'lightgreen';
+  document.getElementById("myDiv").children[0].style.fontWeight = '700';
+  document.getElementById("myDiv").children[0].style.color = 'red';
+  document.getElementById("myDiv").children[0].style.textDecoration = 'underline';
+  document.getElementById("myDiv").children[0].style.fontStyle = 'italic';
+  document.getElementById("myList").style.listStyle = 'none';
+  document.getElementById("myList").style.display = 'flex';  // or document.getElementById("myList").style.display = 'inline';
+  document.getElementsByTagName("span")[0].style.display = 'none';
+</script>
+
+// ********************  Task 6 **************************
+<input type="text" id="input1" value="Text1">
+<input type="text" id="input2" value="Text2">
+<script>
+  // input messages
+  let firstMessage = prompt("Please, enter FIRST message... ", "first message");
+  let secondMessage = prompt("Please, enter FIRST message... ", "2 message");
+  
+  // change text into the forms
+  document.querySelector("#input1").value = firstMessage;
+  document.querySelector("#input2").value = secondMessage;
+</script>
+// ======================  Task 6 (FROM THE TEACHER)  ==============================>
+<input type="text" id="input1" value="Text1">
+<input type="text" id="input2" value="Text2">
+<script>
+  let data1 = prompt("Enter FIRST message ", "first message");
+  let data2 = prompt("Enter SECOND message... ", "2 message");
+  let inp1 = document.getElementById("input1");
+  let inp1 = document.getElementById("input2");
+  inp1.value = data1;
+  inp2.value = data2;
+
+  let input1Value = inp1.value;
+  let input2Value = inp2.value;
+  inp1.value = input2Value;
+  inp2.value = input1Value;
+</script>
+
+// ********************  Task 7 **************************
+<script>
+    // creating
+    let newMain = document.createElement("main"); 
+    newMain.className = "mainClass check item";
+
+    let newDiv = document.createElement("div"); 
+    newDiv.id = "myDiv";
+
+    let newP = document.createElement("p");
+    newP.innerHTML = "First paragraph";
+
+    // insert new tags
+    document.body.appendChild(newMain);
+    newMain.appendChild(newDiv);
+    newDiv.appendChild(newP);
+</script>
+// ======================  Task 7 (FROM THE TEACHER)  ==============================>
+<!-- Empty page -->
+<script>
+    const x = 100;
+    document.body.innerHTML =
+    `<main class="mainClass check item">
+        <div id="myDiv">${x}
+            <p>First paragraph</p>
+        </div>
+    </main>`;
+</script>
+
+
+// The solution of tasks for the Lecture-06 is completed
+</body>
+</html>
