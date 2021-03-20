@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <!-- change the background of the page -->
+    <button id='button'>Change background.</button>
+
+    <script>
+        const button = document.getElementById('button');
+        const rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'rebeccapurple', 'violet'];
+        function changeBackground(){
+            document.body.style.background = rainbow[Math.floor(7 * Math.random())];        
+        }
+        button.addEventListener('click', changeBackground);
+    </script>
+</body>
+</html>

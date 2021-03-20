@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+  <p id ='text'>I learning JavaScript events!</p>
+  <div>
+    <button type="button" id="myBtn">Change style!</button>
+  </div>
+  <script>
+    function changeCSS() {
+      document.getElementsByTagName("button")[0].style.color = 'orange';
+      document.getElementsByTagName("button")[0].style.fontSize = '20px';
+      document.getElementsByTagName("button")[0].style.fontFamily = 'Comic Sans MS';
+      // document.getElementsByTagName("button")[0].style.background  = 'Aquamarine';
+      // document.getElementsByTagName("button")[0].style.borderBottomColor  = 'Magenta';
+      // document.getElementsByTagName("button")[0].style.borderWidth  = '4px Magenta'; 
+    }
+    document.getElementsByTagName("button")[0].onclick = changeCSS;
+  </script>
+</body>
+</html>

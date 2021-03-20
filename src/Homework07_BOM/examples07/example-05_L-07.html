@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <!-- BOM. Geolocation object. getCurrentPosition() 
+    The getCurrentPosition() method is used to return the user's position.
+    The getCurrentPosition() method returns an object on success
+    coords.latitude 	 - the latitude as a decimal number (always returned)
+    coords.longitude 	 - the longitude as a decimal number (always returned)
+    coords.accuracy 	 - the accuracy of position (always returned)
+    coords.altitude 	 - the altitude in meters above the mean sea level (returned if available)
+    coords.speed 	     - the speed in meters per second (returned if available) -->
+
+    <script>
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(pos){
+        alert( 'latitude: '+ pos.coords.latitude +'  longitude: '+pos.coords.longitude+' altitude: '+pos.coords.altitude
+        +' accuracy: '+pos.coords.accuracy+' speed: '+pos.coords.speed );
+      }, function(e){alert(e);}, 
+      {enableHighAccuracy: true, timeout: 4000, maximumAge: 0 } );
+    } else alert(" Your browser does not support geolocation.");
+    </script>
+</body>
+</html>

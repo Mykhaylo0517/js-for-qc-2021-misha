@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <!-- Events handlers. DOM element property -->
+    <button type="button" id="myBtn">Send message</button>
+    <script>
+        function sendMessage() {
+            alert('New message from DOM element property!');
+        }
+        document.getElementById("myBtn").onclick = sendMessage;
+    </script>
+</body>
+</html>

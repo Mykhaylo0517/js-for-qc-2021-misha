@@ -1,9 +1,6 @@
 // ************************************************************
-// Here are examples of code from a classroom lecture N-07)
+// Here are examples of code from a classroom lecture N-08)
 // ************************************************************
-let company ="SoftServe"
-window.alert ();
-
 
 
 
