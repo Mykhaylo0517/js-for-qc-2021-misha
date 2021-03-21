@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <!-- <input type="button" value="Button" id="elem"> -->
+    <input type='button' value='Button' id='elem'>
+    <script>
+        function eventHandler(event){
+            console.log("Event type: " + event.type);
+            console.log(event.target);
+        }
+        let btn = document.getElementById("elem");
+        btn.addEventListener("click", eventHandler);
+    </script>
+
+    <!-- Events handlers. Event object
+    Event Object Properties:
+    bubbles: returns true if the event is up. For example, if an event occurred on a nested element, then it can be processed on the parent element.
+    cancelable: returns true if you can cancel the standard event handling
+    currentTarget: defines the element to which the event handler is attached
+    defaultPrevented: returns true if the preventDefault() method was called on the Event object
+    eventPhase: defines the stage of event processing
+    target: indicates the element on which the event was fired
+    timeStamp: stores the time the event occurred
+    type: indicates the name of the event -->
+
+</body>
+</html>

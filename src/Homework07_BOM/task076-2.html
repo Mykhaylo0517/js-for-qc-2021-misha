@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+    <!-- Display the new window size when user changes the window size and click anywhere -->
+    <script>
+        let wWindow = window.innerWidth;
+        let hWindow = window.innerHeight;
+        document.write(`Width: ${wWindow} ,  Height: ${hWindow} </b>`);
+        let br = document.createElement('p');
+        document.body.append(br);
+        document.write('Розміри внутрішні: '+window.innerWidth+'x'+window.innerHeight+' px.   Зовнішні:'+window.outerWidth+'x'+window.outerHeight+'px.');
+        
+        function eventClick() {
+            document.write("Width : " + window.innerWidth + " , Height : " + window.innerHeight);
+            let br = document.createElement('p');
+            document.body.append(br);
+            document.write('Розміри внутрішні: '+window.innerWidth+'x'+window.innerHeight+' px.   Зовнішні:'+window.outerWidth+'x'+window.outerHeight+'px.'); 
+        }
+        
+        window.addEventListener('click', eventClick);
+        // window.addEventListener('mouseup', eventClick);
+        // window.addEventListener('resize', eventClick);
+                
+    </script>
+</body>
+</html>

@@ -5,16 +5,26 @@
     <title>Including JavaScript</title>
 </head>
 <body>
+  <select name="name" id="people">
+    <option value="Peter">Peter</option>
+    <option value="John">John</option>
+    <option value="Alise">Alise</option>
+    <option value="Alex">Alex</option>
+    <option value="Iren">Iren</option>
+  </select>
 
-  <button onClick="button1()">Choose and Delete.</button>
+  <button onClick="button()">Choose and Delete.</button>
   
   <script>
-      // Create a value with a link to the window object for the opened window
-      function button1() {
-        window.style.color = 'blue';
+      function button() {
+        document.getElementsByTagName("option")[0].style.color = 'orange';
       }
-  
+
+      
+
+
 
   </script>
+
 </body>
 </html>

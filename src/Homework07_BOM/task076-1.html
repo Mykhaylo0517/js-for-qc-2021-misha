@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+    <!-- Display the window size when user changes the window size -->
+    <div id="elem">Try to change the window size</div>
+    <script>
+        document.write("Original window size was: Width : " + window.innerWidth + " , Height : " + window.innerHeight);
+        
+        let elem = document.querySelector('#elem');
+        window.addEventListener('resize', function(event) {
+            elem.innerHTML = "Width : " + window.innerWidth + " , Height : " + window.innerHeight;
+        });
+    </script>
+</body>
+</html>

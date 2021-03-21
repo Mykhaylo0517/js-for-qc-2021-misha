@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <button id="myBtn">Send mail</button>
+    <script>
+        function mailSender1() {
+            alert('Mail_1 was sent');
+        };
+        
+        function mailSender2() {
+            alert('Mail_2 was sent');
+        }
+        
+        function mailSender3() {
+            alert('Mail_33333333 was sent');
+        }
+
+        myBtn.onclick = function() { alert("Prepare to sending"); }         
+        myBtn.addEventListener("click", mailSender1); // Mail_1 was sent
+        myBtn.addEventListener("click", mailSender2); // Mail_2 was sent
+        myBtn.addEventListener("click", mailSender3); // Mail_33333333 was sent
+    </script>
+</body>
+</html>

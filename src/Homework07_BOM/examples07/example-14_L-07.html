@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+</head>
+<body>
+    <div>
+        <p> Example with BUBBLING!!! </p>
+    </div>
+    <style>
+        body * {
+            margin: 10px;
+            border: 1px solid blue;            
+        }        
+    </style>
+    
+    <form onclick="alert('form')">FORM
+        <div onclick="alert('div')">DIV
+            <p onclick="alert('p')">P</p>
+            <!-- <p onclick="event.stopPropagation(); alert('p'); ">P</p> -->
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+
+    <script>
+        //init object to store window properties
+        var windowSize = {
+            w: window.outerWidth,
+            h: window.outerHeight,
+            iw: window.innerWidth,
+            ih: window.innerHeight
+        };
+        document.write('Розміри внутрішні: '+ windowSize.iw +'x'+ windowSize.ih +' px. Зовнішні:'+ windowSize.w + 'x' + windowSize.h + 'px.');
+
+        window.addEventListener("resize", function() {
+        //if window resizes
+        if (window.outerWidth !== windowSize.w || window.outerHeight !== windowSize.h) {
+            windowSize.w = window.outerWidth; // update object with current window properties
+            windowSize.h = window.outerHeight;
+            windowSize.iw = window.innerWidth;
+            windowSize.ih = window.innerHeight;
+            console.log("you're resizing"); //output
+            document.write("you're resizing");
+        }
+        //if the window doesn't resize but the content inside does by + or - 5%
+        else if (window.innerWidth + window.innerWidth * .05 < windowSize.iw ||
+            window.innerWidth - window.innerWidth * .05 > windowSize.iw) {
+            console.log("you're zooming");
+            document.write("you're zooming");
+            windowSize.iw = window.innerWidth;
+        }
+        }, false);
+               
+    </script>
+</body>
+</html>

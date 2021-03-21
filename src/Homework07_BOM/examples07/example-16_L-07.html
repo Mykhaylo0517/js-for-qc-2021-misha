@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_blank">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> </style>
+    <title>My title</title>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed>
+    <!-- Display the cursor coordinates when moving the mouse cursor on the page -->
+    
+    <div id="elem">start</div>
+    <script>
+        let elem = document.querySelector('#elem');
+        window.addEventListener('mousemove', function(event) {
+            elem.innerHTML = event.pageX + ":" + event.pageY;
+        });
+    </script>
+</body>
+</html>

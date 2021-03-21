@@ -14,13 +14,13 @@
     coords.speed 	     - the speed in meters per second (returned if available) -->
 
     <script>
-    if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(function(pos){
-        alert( 'latitude: '+ pos.coords.latitude +'  longitude: '+pos.coords.longitude+' altitude: '+pos.coords.altitude
-        +' accuracy: '+pos.coords.accuracy+' speed: '+pos.coords.speed );
-      }, function(e){alert(e);}, 
-      {enableHighAccuracy: true, timeout: 4000, maximumAge: 0 } );
-    } else alert(" Your browser does not support geolocation.");
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(pos){
+          alert( 'latitude: '+ pos.coords.latitude +'  longitude: '+pos.coords.longitude+' altitude: '+pos.coords.altitude
+          +' accuracy: '+pos.coords.accuracy+' speed: '+pos.coords.speed );
+        }, function(e){alert(e);}, 
+        {enableHighAccuracy: true, timeout: 4000, maximumAge: 0 } );
+      } else alert(" Your browser does not support geolocation.");
     </script>
 </body>
 </html>

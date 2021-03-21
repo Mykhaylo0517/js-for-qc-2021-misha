@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <title>Including JavaScript --- Practical task (Lecture 07)</title>
 </head>
-<body></body>
+<body>
 
-// ********************  Task 1 **************************
+<!-- // ********************  Task 1 ************************** -->
+<!-- <script>
+  function pause2sec() {
+  let date = new Date();
+  date = date.getSeconds();
+  let newDate = 0;
+  while ((newDate - date) < 2) {
+    newDate = new Date();
+    newDate = newDate.getSeconds();
+    }
+  }
+  let myWindow = window.open('', '', 'width=300,height=300,left=0,top=0');
+  pause2sec();
+  myWindow.resizeBy(500,500);
+  pause2sec();
+  myWindow.moveTo(200,200);
+  pause2sec();
+  myWindow.close();
+</script> -->
 
-
-// ********************  Task 2 **************************
+<!-- // ********************  Task 2 ************************** -->
 <!-- <p id ='text'>I learning JavaScript events!</p>
 <div>
   <button type="button" id="myBtn">Change style!</button>
@@ -25,7 +42,7 @@
   }
   document.getElementsByTagName("button")[0].onclick = changeCSS; -->
 
-// ********************  Task 3 **************************
+<!-- // ********************  Task 3 ************************** -->
 <!-- <button type="button" id="myBtn1">Click to make the page blue.</button>
 <button type="button" id="myBtn2">Double-click to make the page pink.</button>
 <button type="button" id="myBtn3">Click and hold to make the page brown.</button>
@@ -61,22 +78,51 @@
     link1.addEventListener('mouseout', changeToWhite); 
 </script>  -->
 
-// ********************  Task 4 **************************
+<!-- // ********************  Task 4 ************************** -->
 
 
-// ********************  Task 5 **************************
+<!-- // ********************  Task 5 ************************** -->
+<!-- new notification when user works with the button -->
+<!-- <button type="button" id="myBtn">Live button!</button>
+
+<script>
+    const button = document.getElementById('myBtn');
+
+    function eventForClick(){
+        let forClick = document.createElement('p');            
+        forClick.innerHTML = "I was pressed!";
+        document.body.append(forClick);
+    }
+    function eventForMouseHover(){
+        let forHover = document.createElement('p');
+        forHover.innerHTML = "Mouse on me!";
+        document.body.append(forHover);
+    }
+    function eventForMouseOutHover(){
+        let forHoverOut = document.createElement('p');
+        forHoverOut.innerHTML = "Mouse is not on me!";
+        document.body.append(forHoverOut);
+    }
+    button.addEventListener('click', eventForClick);
+    button.addEventListener('mouseover', eventForMouseHover);
+    button.addEventListener('mouseout', eventForMouseOutHover);
+</script> -->
+
+<!-- // ********************  Task 6 ************************** -->
+<!-- Display the window size when user changes the window size -->
+<!-- <div id="elem">Try to change the window size</div>
+<script>
+    document.write("Original window size was: Width : " + window.innerWidth + " , Height : " + window.innerHeight);
+    
+    let elem = document.querySelector('#elem');
+    window.addEventListener('resize', function(event) {
+        elem.innerHTML = "Width : " + window.innerWidth + " , Height : " + window.innerHeight;
+    });
+</script> -->
+
+<!-- // ********************  Task 7 ************************** -->
 
 
-// ********************  Task 6 **************************
-
-
-// ********************  Task 7 **************************
-
-
-// ********************  Task 8 **************************
-
-
-// The solution of tasks for the Lecture-07 is completed
-
+<!-- // The solution of tasks for the Lecture-07 is completed -->
 </body>
 </html>

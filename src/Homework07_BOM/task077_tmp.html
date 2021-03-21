@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+  <select name="country" id="country">
+    <option value="ger">Germany</option>
+    <option value="usa">USA</option>
+    <option value="ukr">Ukraine</option>
+  </select>
+                      
+  <select name="cities" id="cities"></select>
+  <p></p>
+    
+  <script>
+    let gerCity = ['Berlin', 'Gamburg', 'Koln'];
+    let usaCity = ['New York', 'Vashington', 'Los Andgeles', 'Texas'];
+    let ukrCity = ['Kyiv', 'Dnipro', 'Donetsk','Lviv', 'Odessa'];
+
+    function button() {
+      document.getElementsByTagName("option")[0].style.color = 'orange';
+    }
+
+
+
+  </script>
+
+</body>
+</html>
