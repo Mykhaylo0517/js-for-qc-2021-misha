@@ -1,8 +1,15 @@
-// *********** Practical task (Lecture 04)  *****************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript --- Practical task (Lecture 07)</title>
+</head>
+<body>
+<!-- // *********** Practical task (Lecture 04)  ***************** -->
 
-// ********************  Task 1 **************************
-
-function calcRectangleArea(widthFun, heightFun) {
+<!-- // ********************  Task 1 ************************** -->
+<script>
+    function calcRectangleArea(widthFun, heightFun) {
     let square;
     // check the entered values  --- the values are numbers, not NaN or not negative
     console.log(typeof Number(widthFun) =="number", typeof Number(heightFun) =="number", 
@@ -27,9 +34,10 @@ height = Number(prompt("Input the width of the rectangle: ", ""));
         
 console.log("Calculation of the square of ​​the rectangle for ", width,
         " ** ", height, " = ", calcRectangleArea(width, height));
+</script>
 
-
-// ********************  Task 1 (FROM THE TEACHER) **************************
+<!-- // ============================  Task 1 (FROM THE TEACHER) ==================================== -->
+<!-- <script>
 function calcRectangleArea(width, height) {
     if (isNaN(width) || isNaN(height)) {
         throw "Parameter is not a number!";
@@ -43,9 +51,10 @@ try {
 catch(e) {
     console.log(e);
 }
+</script> -->
 
-// ********************  Task 2 **************************
-
+<!-- // ********************  Task 2 ************************** -->
+<!-- <script>
 function checkAge() {
     let age1 = prompt("Enter your age :", "");
     let age = Number(age1);
@@ -70,8 +79,11 @@ try {
     console.log(exception.name);
     console.log(exception.message);
     console.log(exception.stack);
-} 
-// ********************  Task 2 (FROM THE TEACHER) **************************
+}
+</script> -->
+
+<!-- // ============================  Task 2 (FROM THE TEACHER) ==================================== -->
+<!-- <script>
 function checkAge() {
     try {
         const age = prompt("You have to access to this film.", "");    
@@ -89,10 +101,41 @@ function checkAge() {
     }
 }
 checkAge();
+</script> -->
 
-// ********************  Task 3 **************************
-// ********************  Task 3 (FROM THE TEACHER) **************************
+<!-- // ********************  Task 3 ************************** -->
+<!-- <script>
 class MonthException {
+    constructor(message) {
+        this.message = message;
+        this.name = "MonthException";
+    }
+}
+function showMonthName(month){
+    i = month - 1;  // array numeration
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    if (i >= 0 && i <= 11) {
+        return months[i];
+    } else {
+        throw new MonthException ('Incorrect month number');
+    }
+}
+try {
+    let myMonth = Number(prompt("Enter number of month :", ""));  // for example: -2, 0, 1, 5, 12, 13, 15
+    if (Number.isNaN(myMonth) || myMonth < 1 ) {
+        alert("You have entered valye with symbols, 0 or negative.");
+        throw new Error("You have entered valye with symbols, 0 or negative.");
+    }
+    let montName = showMonthName(myMonth);
+    console.log(montName);
+} catch (error) {
+    monthName = 'unknown';
+    console.log(error.name, error.message); // the error handler
+}
+</script> -->
+
+<!-- // ============================  Task 3 (FROM THE TEACHER) ==================================== -->
+<!-- <script>class MonthException {
     constructor(message) {
         this.message = message;
         this.name = "MonthException";
@@ -117,11 +160,38 @@ try {
     monthName = 'unknown';
     console.log(e.name, e.message); // pass the exeption object to the error handler
 }
+</script> -->
 
-// ********************  Task 4 **************************
-// ********************  Task 4 (FROM THE TEACHER) **************************
-
+<!-- // ********************  Task 4 ************************** -->
+<!-- <script>
 function showUser(id) {
+    if (id < 0) {
+        throw new Error (Error.name + ': ID must not be negative: ' + id);
+    }
+    return {id: id};
+}
+function showUsers(ids) {
+    let arrRes=[];
+    ids.forEach(function (id) {
+        try {
+            let personId = showUser(id);
+            arrRes.push(personId);
+        } catch (exception) {
+            console.log(exception.message);
+        }
+    });
+    return console.log(arrRes);
+}
+let inputData1 = [7, -12, 44, 22];
+let inputData2 = [7, -12, 0, 22222, -45, 45, 1, "df222"];
+showUsers(inputData1);
+console.log(" =============== ");
+showUsers(inputData2);
+</script> -->
+
+<!-- // ============================  Task 4 (FROM THE TEACHER) ==================================== -->
+<!-- <script>
+    function showUser(id) {
     if (id < 0) {
         throw new Error ('ID must not be negative: ' + id);
     }
@@ -140,5 +210,8 @@ function showUsers(ids) {
     return result;
 }
 showUsers([7, -12, 44, 22]);
+</script> -->
 
-// The solution of tasks for the Lecture-04 is completed
+<!-- // The solution of tasks for the Lecture-04 is completed -->
+</body>
+</html>

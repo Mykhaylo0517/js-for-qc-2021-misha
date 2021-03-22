@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>        
+</head>
+<body>    
+    <script>
+        function showUser(id) {
+            if (id < 0) {
+                throw new Error (Error.name + ': ID must not be negative: ' + id);
+            }
+            return {id: id};
+        }
+        function showUsers(ids) {
+            let arrRes=[];
+            ids.forEach(function (id) {
+                try {
+                    let personId = showUser(id);
+                    arrRes.push(personId);
+                } catch (exception) {
+                    console.log(exception.message);
+                }
+            });
+            return console.log(arrRes);
+        }
+        let inputData1 = [7, -12, 44, 22];
+        let inputData2 = [7, -12, 0, 22222, -45, 45, 1, "df222"];
+        showUsers(inputData1);
+        console.log(" =============== ");
+        showUsers(inputData2);
+    </script>
+</body>
+</html>

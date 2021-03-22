@@ -22,7 +22,7 @@
                 this.height = h;
             }
             getArea() {
-                return this.base * this.height / 2;
+                return this.base * (this.height / 2);
             }
         }
         class Square extends GeometricFigure {
@@ -47,7 +47,7 @@
         function handleFigures(figures) {
             return figures.reduce(function(sum,figure){
                 if (figure instanceof GeometricFigure) {
-                    console.log(`Geometric figure: ${figure.toString()} - area : ${figure.getArea()}`);
+                    console.log(`Geometric figure: ${figure.toString()} - area: ${figure.getArea()}`);
                     return sum + figure.getArea()
                 }
                 throw Error('Bad argument figure.');
@@ -55,14 +55,13 @@
         }
 
         const figures = [new Triangle(4, 5), new Square(7), new Circle(5)];
-    	console.log(handleFigures(figures));
+    	console.log(handleFigures(figures) + " // total area");
 
         // Output example:
         // Geometric figure: Triangle - area: 10
         // Geometric figure: Square - area: 49
         // Geometric figure: Circle - area: 78.53981633974483
         // 137.53981633974485 // total area
-
 
     </script>
 </body>

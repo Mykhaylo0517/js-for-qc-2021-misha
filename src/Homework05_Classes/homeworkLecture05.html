@@ -1,6 +1,14 @@
-// *********** Practical task (Lecture 05)  *****************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript --- Practical task (Lecture 07)</title>
+</head>
+<body>
+<!-- // *********** Practical task (Lecture 05)  ***************** -->
 
-// ********************  Task 1 **************************
+<!-- // ********************  Task 1 ************************** -->
+<!-- <script>
 function propsCount(currentObject) {
     let propsCount = 0;
     propsCount = Object.keys(currentObject).length;
@@ -25,9 +33,10 @@ let mentorBig = {
 console.log(propsCount(mentorBig));
 
 let mentorEmpty = {};
-console.log(propsCount(mentorEmpty));
+console.log(propsCount(mentorEmpty)); -->
 
-// ********************  Task 1 (FROM THE TEACHER)  **************************=======
+<!-- // ====================================  Task 1 (FROM THE TEACHER)  ===================================== -->
+<!-- <script>
 const mentor = { 
     course: "JS fundamental", 
     duration: 3,
@@ -41,8 +50,10 @@ function propsCount(currentObject) {
     return osize;
 }
 console.log("Count of properties of the current object: " + propsCount(mentor));
+</script> -->
 
-// ********************  Task 2 **************************
+<!-- // ********************  Task 2 ************************** -->
+<!-- <script>
 function showProps(obj) {
     console.log(Object.keys(obj));
     let newId = Object.keys(obj);
@@ -77,8 +88,11 @@ let obj3 = {
     id_7: 777
 };
 showProps(obj3);
-// ********************  Task 2 (FROM THE TEACHER)  **************************
-function showProps(obj) {
+</script> -->
+
+<!-- // ********************  Task 2 (FROM THE TEACHER)  ************************** -->
+<!-- <script> 
+showProps(obj) {
     let props = [];
     for (let key in obj) {
         props.push(key);
@@ -89,8 +103,10 @@ function showProps(obj) {
     return props;
 }
 console.log(showProps({Alex: 1982, John: 1994, Sam: 1997, Frank: 1990, Andrew: 1988}));
+</script> -->
 
-// ********************  Task 3 **************************
+<!-- // ********************  Task 3 ************************** -->
+<!-- <script> 
 class Person {
     constructor(name, surname) {
         this.name = name;
@@ -119,8 +135,10 @@ class Student extends Person {
 let stud1 = new Student("Petro", "Petrenko", 2015);
 console.log(stud1.showFullName("Petrovych"));         // Petrenko Petro Petrovych
 console.log("Current course: " + stud1.showCourse()); //Current course: 5
+</script> -->
 
-// ********************  Task 3 (FROM THE  TEACHER)   **************************
+<!-- // ********************  Task 3 (FROM THE  TEACHER)   ************************** -->
+<!-- <script>
 class Person {
     constructor(name, surname) {
         this.name = name;
@@ -150,8 +168,10 @@ console.log("Current course: " + stud1.showCourse()); //Current course: 7
 let stud2 = new Student("Ivan", "Ivanennko", 2017);
 console.log(stud2.showFullName("Ivanovych"));         
 console.log("Current course: " + stud2.showCourse()); //Current course: 5
+</script> -->
 
-// ********************  Task 4 **************************
+<!-- // ********************  Task 4 ************************** -->
+<!-- <script> 
 class Worker {
     #experience = 1.2;
     constructor(fullName, dayRate, workingDays) {
@@ -187,14 +207,14 @@ class Worker {
 }
 
 function sortSalaries(wokerArray) {
-    let sortedSalary = [];
-    sortedSalary = workersArray.sort(function(a,b) {
-        return a.exSalary() - b.exSalary();            
-    })
-    console.log("Sorted salary: ");
-    for (let i = 0; i < sortedSalary.length; i++) {
-        console.log(sortedSalary[i].fullName + ": " + sortedSalary[i].exSalary());
-    }
+let sortedSalary = [];
+sortedSalary = workersArray.sort(function(a,b) {
+    return a.exSalary() - b.exSalary();            
+})
+console.log("Sorted salary: ");
+for (let i = 0; i < sortedSalary.length; i++) {
+    console.log(sortedSalary[i].fullName + ": " + sortedSalary[i].exSalary());
+}
 }
 
 let worker1 = new Worker("John Johnson", 20, 23);
@@ -230,7 +250,26 @@ console.log("  <><><><><><><><><><><><><><>  ");
 let workersArray = [worker1, worker2, worker3];
 sortSalaries(workersArray);
 
-// ********************  Task 4 (FROM THE TEACHER)    **************************
+// Output example:
+// John Johnson
+// John Johnson salary: 460
+// New experience: 1.2
+// John Johnson salary: 552
+// New experience: 1.5
+// John Johnson salary: 690
+
+// Tom Tomson
+// Tom Tomson salary: 1056
+// . . . . . .
+
+// Sorted salary:
+// John Johnson: 690
+// Andy Ander: 1000.5
+// Tom Tomson: 1584
+</script> -->
+
+<!-- // ====================================  Task 4 (FROM THE TEACHER)   ==================================== -->
+<!-- <script>
 class Worker {
     #experience = 1.2;
     constructor(fullName, dayRate, workingDays) {
@@ -298,11 +337,64 @@ console.log(" ---------------------");
 
 let workersArray = [worker1, worker2, worker3];
 worker3.sortSalaries(workersArray);
+</script> -->
 
-// ********************  Task 5 **************************
+<!-- // ********************  Task 5 ************************** -->
+<script> 
+class GeometricFigure {	
+    getArea() {	
+        return 0;
+    }
+    toString() {
+        return Object.getPrototypeOf(this).constructor.name;
+    }
+}
+// Your code ... 
+class Triangle extends GeometricFigure {
+    constructor(b, h) {
+        super();
+        this.base = b;
+        this.height = h;
+    }
+    getArea() {
+        return this.base * (this.height / 2);
+    }
+}
+class Square extends GeometricFigure {
+    constructor(a) {
+        super();
+        this.side = a;
+    }
+    getArea() {
+        return this.side ** 2;
+    }
+}
+class Circle extends GeometricFigure {
+    constructor(r) {
+        super();
+        this.radius = r;
+    }
+    getArea() {
+        return Math.PI * this.radius ** 2;
+    }
+}
 
+function handleFigures(figures) {
+    return figures.reduce(function(sum,figure){
+        if (figure instanceof GeometricFigure) {
+            console.log(`Geometric figure: ${figure.toString()} - area: ${figure.getArea()}`);
+            return sum + figure.getArea()
+        }
+        throw Error('Bad argument figure.');
+    }, 0);
+}
 
-// ********************  Task 5  (FROM THE TEACHER)      **************************
+const figures = [new Triangle(4, 5), new Square(7), new Circle(5)];
+console.log(handleFigures(figures) + " // total area");
+</script>
+
+<!-- // ====================================  Task 4 (FROM THE TEACHER)   ==================================== -->
+<!-- <script>
 class GeometricFigure {	
     getArea() {	
         return 0;
@@ -353,12 +445,9 @@ function handleFigures(figures) {
 
 const figures = [new Triangle(4, 5), new Square(7), new Circle(5)];
 console.log(handleFigures(figures));
-
-// Output example:
-// Geometric figure: Triangle - area: 10
-// Geometric figure: Square - area: 49
-// Geometric figure: Circle - area: 78.53981633974483
-// 137.53981633974485 // total area
+</script> -->
 
 
-// The solution of tasks for the Lecture-05 is completed
+<!-- // The solution of tasks for the Lecture-07 is completed -->
+</body>
+</html>
