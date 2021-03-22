@@ -15,6 +15,7 @@
   <p></p>
     
   <script>
+    document.write(country.value.innerHTML + cities.value);
     let gerCity = ['Berlin', 'Gamburg', 'Koln'];
     let usaCity = ['New York', 'Vashington', 'Los Andgeles', 'Texas'];
     let ukrCity = ['Kyiv', 'Dnipro', 'Donetsk','Lviv', 'Odessa'];
@@ -23,9 +24,37 @@
       document.getElementsByTagName("option")[0].style.color = 'orange';
     }
 
+    country.addEventListener('change', function(){
+      console.log(this.value);
+      cities.addEventListener('change', function(){
+        cities.log(this.value);
+        });
+      document.write(this.value);
+    });
 
 
-  </script>
+</script>
+<!-- 
+
+<div id="elem">Try to change the window size</div>
+<script>
+    document.write("Original window size was: Width : " + window.innerWidth + " , Height : " + window.innerHeight);
+    
+    let elem = document.querySelector('#elem');
+    window.addEventListener('resize', function(event) {
+        elem.innerHTML = "Width : " + window.innerWidth + " , Height : " + window.innerHeight;
+    });
+    
+
+    people.addEventListener('change', function(){
+      console.log(this.value);
+    });
+
+
+
+</script> -->
+
+
 
 </body>
 </html>

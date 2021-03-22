@@ -79,7 +79,27 @@
 </script>  -->
 
 <!-- // ********************  Task 4 ************************** -->
-
+<!-- <select name="name" id="mySelectIdPeople">
+    <option value="Peter">Peter</option>
+    <option value="John">John</option>
+    <option value="Alise">Alise</option>
+    <option value="Alex">Alex</option>
+    <option value="Iren">Iren</option>
+  </select>
+<button onClick="button()">Choose and Delete.</button>
+  
+  <script>
+    const but = document.getElementById("mySelectIdPeople");
+    function button() {
+      let objSel = document.getElementById("mySelectIdPeople");
+      if (objSel.selectedIndex != -1) {  //Якщо є вибранный елемент, то відобразити його властивість (тобто, value)
+        console.log('This item was deleted : ', objSel.options[objSel.selectedIndex].value);
+      } else {
+        throw new Error('the dropdown is empty');
+      }
+      objSel.removeChild(objSel.options[objSel.selectedIndex]);
+    }
+  </script> -->
 
 <!-- // ********************  Task 5 ************************** -->
 <!-- new notification when user works with the button -->

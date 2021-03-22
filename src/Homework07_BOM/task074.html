@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+  <select name="name" id="mySelectIdPeople">
+    <option value="Peter">Peter</option>
+    <option value="John">John</option>
+    <option value="Alise">Alise</option>
+    <option value="Alex">Alex</option>
+    <option value="Iren">Iren</option>
+  </select>
+  <button onClick="button()">Choose and Delete.</button>
+  
+  <script>
+    const but = document.getElementById("mySelectIdPeople");
+    function button() {
+      let objSel = document.getElementById("mySelectIdPeople");
+      if (objSel.selectedIndex != -1) {  //Якщо є вибранный елемент, то відобразити його властивість (тобто, value)
+        console.log('This item was deleted : ', objSel.options[objSel.selectedIndex].value);
+      } else {
+        throw new Error('the dropdown is empty');
+      }
+      objSel.removeChild(objSel.options[objSel.selectedIndex]);
+    }
+    
+    // mySelectIdPeople.addEventListener('change', function(){
+    //   let valueDel = this.value;
+    //   console.log(valueDel);
+    // });
+
+    // function button() {
+    //   // delete first element from the dropdown
+    //   let v = document.getElementsByTagName("option")[0];
+    //   v.parentNode.removeChild(v);
+    //   console.log("value :", v);
+    // }
+  </script>
+</body>
+</html>
