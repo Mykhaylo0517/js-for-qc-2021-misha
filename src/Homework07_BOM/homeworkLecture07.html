@@ -141,7 +141,52 @@
 </script> -->
 
 <!-- // ********************  Task 7 ************************** -->
-
+  <select name="country" id="country">
+    <option value="ger">Germany</option>
+    <option value="usa">USA</option>
+    <option value="ukr">Ukraine</option>
+  </select>
+                      
+  <select name="cities" id="cities"></select>
+  <p></p>
+    
+  <script>   
+    country.addEventListener('click', function(event) {
+      let cit = document.getElementById("cities");
+      if (country.options[country.selectedIndex].value == "ger") {
+        let cit = document.getElementById("cities");
+        cit.innerHTML =
+        ` <option value="berlin">Berlin</option>
+          <option value="gamburg">Gamburg</option>
+          <option value="koln">Koln</option>`
+      }
+      else if (country.options[country.selectedIndex].value == "usa") {
+        cit.innerHTML =
+        ` <option value="newyork">New York</option>
+          <option selected value="vashington">Vashington</option>
+          <option value="losandgeles">Los Andgeles</option>
+          <option value="texas">Texas</option>`
+      }
+      else { cit.innerHTML =
+        ` <option value="jmerynka">Jmerynka</option>
+          <option value="berdychiv">Berdychiv</option>
+          <option selected value="kyiv">Kyiv</option>
+          <option value="dnipro">Dnipro</option>
+          <option value="donetsk">Donetsk</option>
+          <option value="lviv">Lviv</option>
+          <option value="odessa">Odessa</option>`
+      }
+    
+      let par = document.getElementsByTagName("p")[0];
+        par.innerHTML = "Contry: " + country.options[country.selectedIndex].innerHTML + ", City : " + cities.options[cities.selectedIndex].innerHTML;
+      });
+    
+      cities.addEventListener('change', function(){
+        let par = document.getElementsByTagName("p")[0];  
+        par.innerHTML = "Contry: " + country.options[country.selectedIndex].innerHTML + ", City : " + cities.options[cities.selectedIndex].innerHTML;
+      });
+    
+  </script>
 
 <!-- // The solution of tasks for the Lecture-07 is completed -->
 </body>
