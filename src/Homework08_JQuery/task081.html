@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+  <script>
+    function upperCase(strEl){   
+      let regExpres = /^[A-Z]{1}/.test(strEl);
+      let outStr = "String's NOT starts with uppercase character";  
+      if (regExpres) {
+          return console.log(outStr);
+      } 
+      else {
+          outStr = "String's starts with uppercase character";
+          return console.log(outStr);
+      } 
+    }
+    upperCase('regexp'); // String's NOT starts with uppercase character 
+    upperCase('RegExp'); // String's starts with uppercase character 
+    upperCase('2453RegExp'); 
+    upperCase('Z-+RegExp');
+    upperCase('$#@RegExp');
+    upperCase('-+RegExp');
+  </script>
+</body>
+</html>

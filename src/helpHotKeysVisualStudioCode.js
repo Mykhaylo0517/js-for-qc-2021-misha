@@ -6,27 +6,27 @@
 // ************************************************************
 
 // add comments on a line:
-    Ctrl + /
+    // Ctrl + /
 // add comments for several lines:
-    Ctrl+Shift+/
+    // Ctrl+Shift+/
 // go to Num line:
-    Ctrl + G and enter number of line
+    // Ctrl + G and enter number of line
 // Swap the line with neighboring: 
-    Alt + ↑ / ↓
+    // Alt + ↑ / ↓
 // Duplicate a line
-    Shift + Alt + ↓ / ↑
+    // Shift + Alt + ↓ / ↑
 // Go to the paired brace
-    Ctrl + Shift + \
+    // Ctrl + Shift + \
 // Rename the variable
-    F2
+    // F2
 // Format the document
-    Shift + Alt + F
+    // Shift + Alt + F
 // Go to variable declaration
-    F12
+    // F12
 // Enable / disable word wrap
-    Alt + Z
+    // Alt + Z
 // Enable Zen mode - without panels (go to back - press Escape)
-    Ctrl + K Z
+    // Ctrl + K Z
 
 // DEBUGGING methods:
 // 1. JavaScript Validator: http://www.jslint.com/
@@ -39,3 +39,5 @@
 // 1. Syntax errors                 --> Uncaught SyntaxError: ...
 // 2. Runtime errors - exceptions   --> Uncaught ReferenceError:  ...
 // 3. Logical errors -
+
+// символ переведення рядка:    \n

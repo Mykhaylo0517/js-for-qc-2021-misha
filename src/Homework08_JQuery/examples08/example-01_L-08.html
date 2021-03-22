@@ -7,6 +7,144 @@
     <!-- DOM tree  -->
 
     <script>
+// LEGENDS:
+    // TEORY
+        // codes or input into CONSOLE
+
+    // creating a regular expression
+        // let regexp1 = new RegExp('pattern');            // Method 1
+        // let regexp2 = /pattern/;                        // Method 2
+        // let regexp = new RegExp("pattern", "flags");   // Method 3 with flags
+		// let regexp = /pattern/flags;                   // Method 4 with flags
+    // flags:
+    // i - with this flag, the search is not case sensitive: there is no difference between x and X
+    // g - with this flag, the search searches for all matches, without it, only the first
+    // m - multiline mode
+
+    // regExp.exec(string)  -   method
+        // let str = "Data transfer started!";
+        // let regExp = /Data/;                    // /data/i  - flag "i" - lover and uper case
+        // let result = regExp.exec(str);
+        // console.log(result);   // Data
+        //  
+        // str = "Session complete";
+        // result = regExp.exec(str);
+        // console.log(result);   // null
+
+    // regExp.test(string)  -   method
+        // let str = "Data transfer started!";
+        // let regExp = /Data/;
+        // let result = regExp.test(str);
+        // console.log(result);   // true
+        //  
+        // str = "Session complete";
+        // result = regExp.test(str);
+        // console.log(result);   // false
+
+    // sets method  -- [xyz] means any of the 3 characters: ‘x ',‘ y' or ‘z '
+        // let regExp = /[sk]/;
+        // let str1 = "test message";
+        // let str2 = "another data";
+        // console.log(regExp.test(str1)); // true
+        // console.log(regExp.test(str2)); // false
+    
+    // Ranges. The range of characters can be set through a dash.
+        // let regExp1 = /[a-d]/;  // a, b, c, d
+        // let str1 = "test message";
+        // let str2 = "some text";
+        // console.log(regExp1.test(str1)); // true
+        // console.log(regExp1.test(str2)); // false
+
+        // let regExp2 = /[6-9]/; // 6,7,8,9
+        // let pin1 = "2145";
+        // let pin2 = "5248";
+        // console.log(regExp2.test(pin1)); // false
+        // console.log(regExp2.test(pin2)); // true
+
+        // /[A-E0-3]/.test('DC7748')   // true
+	    // /[s-z0-9]/.test('@code1')   // true
+
+    // Excluding ranges:
+    // [^ bem] - any character except ‘b', 'e‘ or ‘m'
+    // [^ 0-3] - any character except the number 0,1,2,3
+    // [^ @%] - any character except ‘@’ or ‘% '
+
+    // string.method_name(RegExp);  method
+    // search()
+        // let str = "some text here!";
+        // let re = /tex/;
+        // let result = str.search(re);
+        // console.log(result); // 5
+    // split() 
+        // let re = /;/;
+        // let nameList = "Igor;Ostap;Viktor;Iryna";
+        // console.log(nameList.split(re)); // ["Igor", "Ostap", "Viktor", "Iryna"]
+    // match() 
+        // let str = "John came home and did homework";
+        // let re = /home/g;
+        // let result = str.match(re);
+        // console.log(result); // ["home", "home"]
+    // replace()
+        // "My home is a good home!".replace('home', 'car')    // "My car is a good home!"
+        // "My home is a good home!".replace(/home/, 'car')   // "My car is a good home!"
+        // "My home is a good home!".replace(/home/g, 'car')  // "My car is a good car!"
+
+    // Metacharacters:
+    // \d matches any digit, equivalent to [0-9]
+    // \D matches any character that’s not a digit, equivalent to [^0-9]
+    // \w matches any alphanumeric character (plus underscore), equivalent to [A-Za-z_0-9]
+    // \W matches any non-alphanumeric character, anything except [^A-Za-z_0-9]
+    // \s matches any whitespace character: spaces, tabs, newlines 
+    // \S matches any character that’s not a whitespace
+    // \0 matches null
+    // \n matches a newline character
+    // .  matches any character that is not a newline char (e.g. \n)
+
+    // Quantifiers
+    // +   – matches one or more repetitions of the previous character.
+    // *   – matches any number of repetitions of the previous character or its absence.
+    // ?   – makes the character optional. 
+    // {n}   – corresponds to the nth number of repetitions of the previous character 
+    // {n,}   – matches n or more repetitions of the previous character 
+    // {n,m}   – matches n to m repetitions of the previous character 
+    // ^   – matches the beginning of a line 
+    // $   – matches end of line
+        // let str = "+38(093)-458-22-76"; 
+        // console.log( str.match(/\d+/g) );  // ["38", "093", "458", "22", "76"]
+
+        // console.log( "100 10 1".match(/\d0*/g) ); // ["100", "10", "1"]
+
+        // console.log( "100 10 1 1000001".match(/10?/g) );  // ["10", "10", "1“]
+
+        // console.log("My vacation is not 2, but 22 days".match(/\d{2,3}/g) ); // ["22"]
+
+        // /^\d{4}\w{1,3}$/.test('1000PRO') // true
+        
+    // Escaping a special characters
+        // console.log( "Paragraph 2.3".match(/\d\.\d/) );  // 2.3 
+        // console.log( "Paragraph 223".match(/\d\.\d/) );  // null
+
+    // Groups, logical OR 
+        // let re1 = /(ha)+/gi;
+        // let re2 = /ha+/gi;
+        // let str = "Hahaaaha";
+        // console.log(str.match(re1)); // ["Haha", "ha"] 	
+        // console.log(str.match(re2)); // ["Ha", "haaa", "ha"]
+
+        // let re = /html|css|java(script)?/gi;
+        // let str = "Java first appeared, then HTML, then JavaScript";
+        // console.log( str.match(re) ); // ["Java", "HTML", "JavaScript"]
+
+    // Multiline mode
+let str = `1) Lviv
+2) Rivne
+3) Ternopil`; 
+        console.log( str.match(/^\d/gm) ); // ["1", "2", "3"]
+
+        // let str2 = `1) Lviv
+        // 2) Rivne
+        // 3) Ternopil`; 
+        // console.log( str2.match(/^\d/g) ); // ["1"]
 
 
     </script>
