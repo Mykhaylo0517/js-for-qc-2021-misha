@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <input type="checkbox" id="checkbox1">	
+    <input type="checkbox" id="checkbox2">	
+    <input type="checkbox" id="checkbox3">	
+    <input type="checkbox" id="checkbox4">	
+    <input type="checkbox" id="checkbox5">	
+    <input type="checkbox" id="checkbox6">	
+    <script>
+        // more info about checkbox is here: https://snipp.ru/jquery/checkbox-jquery
+        function clickBox() {
+            let countChecked = $(':checkbox:checked').length;
+            if (countChecked >= 3) {
+                $(":checkbox").attr('disabled', 'disabled');
+            }
+        }
+        $(":checkbox").on("click", clickBox);
+    </script>
+</body>
+</html>
