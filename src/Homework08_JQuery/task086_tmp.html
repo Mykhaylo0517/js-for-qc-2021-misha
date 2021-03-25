@@ -6,17 +6,40 @@
 </head>
 <body>
 
+<script>
+    // my code ...
+    function checkEmail(val) {
+        // let regExp = /^[a-zA-Z0-9.-/]+@[a-zA-Z0-9.-]+/;
+        let regExp2 = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (regExp2.test(val)){
+            return console.log( val, " - Email is correct!", true);
+        }
+        else {
+            alert("Email is not correct!");
+            return console.log(false);            
+        }        
+    }
 
-  <script>
-      // my code ...
-      function checkEmail() {
+    checkEmail("Qmail2@gmail.com");  // true
 
-      }
-      
-      
-      checkEmail('my_mail@gmail.com');  // Email is correct!
-      checkEmail('#my_mail@gmail.com');  // Email is not correct!
-      
-  </script>
+    checkEmail("mysite@ourearth.com");  // true
+    checkEmail("my.ownsite@ourearth.org");  // true
+    checkEmail("mysite@you.me.net");  // true
+
+    checkEmail("mysite.ourearth.com");  // false -  [@ is not present]
+    checkEmail("mysite@.com.my");  // false  -  [ tld (Top Level domain) can not start with dot "." ]
+    checkEmail("@you.me.net ");  // false  - [ No character before @ ]
+    checkEmail("mysite123@gmail.b");  // false -  [ ".b" is not a valid tld ]
+    checkEmail("mysite@.org.org");  // false -  [ tld can not start with dot "." ]
+    checkEmail(".mysite@mysite.org");  // false   - [ an email should not be start with "." ]
+    checkEmail("mysite()*@gmail.com");  // false -  [ here the regular expression only allows character, digit, underscore, and dash ]
+    checkEmail("mysite..1234@yahoo.com");  // false  -  [double dots are not allowed]
+    
+
+    // task 06
+    checkEmail('my_mail@gmail.com');  // Email is correct!
+    checkEmail('#my_mail@gmail.com');  // Email is not correct!
+
+</script>
 </body>
 </html>
