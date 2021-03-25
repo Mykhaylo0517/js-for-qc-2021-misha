@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Including JavaScript --- Practical task (Lecture 09)</title>
+    <title>Including JavaScript --- Practical task (Lecture 08)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 
@@ -24,7 +25,7 @@
 </script> -->
 
 <!-- // ********************  Task 2 ************************** -->
-<script>
+<!-- <script>
     function checkEmail(email) {
     let regExp = /^\w+[.]*\w+@\w+[.]\w+/;
     if (regExp.test(email)) {
@@ -33,9 +34,18 @@
     else return console.log(email, false);
     }
     checkEmail("Qmail2@gmail.com");  // true
-</script>
+</script> -->
 
 <!-- // ********************  Task 3 ************************** -->
+<h2 class="head">header1</h2>
+<h2 class="head">header2 <span class="inner">inner elem1</span></h2>
+<h2>header3</h2>
+<h2 class="head">header4<span>inner elem2</span></h2>
+<h2>header5</h2>
+<script>
+  $( ".head" ).css( "background", "green" );
+  $( ".inner" ).css( "fontSize", "35px" );
+</script>
 
 <!-- // ********************  Task 4 ************************** -->
 
