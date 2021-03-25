@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+</head>
+<body>
+  <script>
+      function checkEmail(email) {
+        let regExp = /^\w+[.]*\w+@\w+[.]\w+/;
+        if (regExp.test(email)) {
+            return console.log(true);
+        }
+        else return console.log(email, false);
+      }
+      checkEmail("Qmail2@gmail.com");  // true
+
+      // checkEmail("mysite@ourearth.com");     // true
+      // checkEmail("my.ownsite@ourearth.org"); // true
+      // checkEmail("mysite@you.me.net");       // true
+
+      // checkEmail("mysite.ourearth.com"); // false - [@ is not present]
+      // checkEmail("mysite@.com.my");      // false - [No character after @]
+      // checkEmail("@you.me.net ");        // false - [No character before @]
+      // checkEmail("mysite123@gmail.b");   // true
+      // checkEmail("mysite@.org.org");     // false - [No character after @]
+      // checkEmail(".mysite@mysite.org");  // false - [can not start with dot "."]
+      // checkEmail("mysite()*@gmail.com"); // false - [here the regular expression only allows character, digit, underscore, and dash ]
+      // checkEmail("mysite..1234@yahoo.com"); // true  
+  </script>
+</body>
+</html>
