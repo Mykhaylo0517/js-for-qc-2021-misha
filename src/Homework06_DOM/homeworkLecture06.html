@@ -6,8 +6,8 @@
 </head>
 <body>
 
-// ********************  Task 1  **************************
-<div id="test">First</div>
+<!-- // ********************  Task 1  ************************** -->
+<!-- <div id="test">First</div>
 <script>
     let ids = document.getElementById("test");
     let tags = document.getElementsByTagName("div");
@@ -23,47 +23,48 @@
 
     // Method № 3
     //document.body.innerHTML = "Last";
-</script>
-// ********************  Task 1 (FROM THE TEACHER)   **************************
-<div id="test">First</div>
+</script> -->
+
+<!-- // ********************  Task 1 (FROM THE TEACHER)   ************************** -->
+<!-- <div id="test">First</div>
 <script>
     document.getElementById("test").innerHTML = "Last";  // Method 1
     document.querySelector("test").innerHTML = "Last2";  // Method 2     
-</script>
+</script> -->
 
-// ********************  Task 2 **************************
-<img class="image" src="dog.jpg">
+<!-- // ********************  Task 2 ************************** -->
+<!-- <img class="image" src="dog.jpg">
 <script>
     let element = document.getElementsByClassName("image");
     element[0].src="cat.jpg";
     alert("Changing the image from DOG to CAT!");
     // ...
-</script>
-// ======================  Task 2 (FROM THE TEACHER)  ==============================>
-<img class="image" src="dog.jpg">
+</script> -->
+
+<!-- // ======================  Task 2 (FROM THE TEACHER)  ==============================> -->
+<!-- <img class="image" src="dog.jpg">
 <script>
     let elem = document.getElementsByClassName("image")[0];
     elem.src="cat.jpg";
     alert("Changing the image from DOG to CAT!", elem.outerHTML);
-</script>
+</script> -->
 
-// ********************  Task 3 **************************
-<h2>Article header</h2>
+<!-- // ********************  Task 3 ************************** -->
+<!-- <h2>Article header</h2>
 <div id="text">
     <p>First paragraph</p>
     <p>Second paragraph</p>
     <p>Third paragraph</p>
 </div>
 <p>Another text</p>
-<!-- my code -->
 <script>
-let bodyNodes = document.getElementById("text").childNodes;
-for (let i = 0; i < (bodyNodes.length/2-1); i++) {
-    console.log(`Selector text ${i} :`, document.getElementsByTagName("p")[i].innerHTML);      
-}
-</script>
-// ======================  Task 3 (FROM THE TEACHER)  ==============================>
-<h2>Article header</h2>
+    let bodyNodes = document.getElementById("text").childNodes;
+    for (let i = 0; i < (bodyNodes.length/2-1); i++) {
+        console.log(`Selector text ${i} :`, document.getElementsByTagName("p")[i].innerHTML);      
+    }
+</script> -->
+<!-- // ======================  Task 3 (FROM THE TEACHER)  ==============================> -->
+<!-- <h2>Article header</h2>
 <div id="text">
     <p>First paragraph</p>
     <p>Second paragraph</p>
@@ -76,10 +77,10 @@ for (let i = 0; i < (bodyNodes.length/2-1); i++) {
     for (let i = 0; i < elems.length; i++) {
         console.log(`Selector text ${i} :`, elems[i].innerHTML);      
     }
-</script>
+</script> -->
 
-// ********************  Task 4 **************************
-<ul id="list">
+<!-- // ********************  Task 4 ************************** -->
+<!-- <ul id="list">
     <li>1</li>
     <li>2</li>
     <li>3</li>
@@ -97,9 +98,10 @@ for (let i = 0; i < (bodyNodes.length/2-1); i++) {
         document.body.firstElementChild.firstElementChild.nextElementSibling.innerHTML, ",",
         document.body.firstElementChild.lastElementChild.previousElementSibling.innerHTML, ",",
         document.body.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.innerHTML);   // 1, 5, 2, 4, 3
-</script>
-// ======================  Task 4 (FROM THE TEACHER)  ==============================>
-<ul id="list"><li>1</li><li>2</li><li>3</li><li>4</li><li id="id5">5</li></ul>
+</script> -->
+
+<!-- // ======================  Task 4 (FROM THE TEACHER)  ==============================> -->
+<!-- <ul id="list"><li>1</li><li>2</li><li>3</li><li>4</li><li id="id5">5</li></ul>
 <script>
     // Method 1
     let parentEl = document.getElementsById("list");
@@ -121,10 +123,10 @@ for (let i = 0; i < (bodyNodes.length/2-1); i++) {
     alert(secondEl);
     alert(fourthEl);
     alert(thirdtEl);
-</script>
+</script> -->
 
-// ********************  Task 5 **************************
-<h1>I'am a big header!!!</h1>
+<!-- // ********************  Task 5 ************************** -->
+<!-- <h1>I'am a big header!!!</h1>
 <div id="myDiv">
   <p>First paragraph</p>
   <p>Second paragraph</p>
@@ -137,7 +139,6 @@ for (let i = 0; i < (bodyNodes.length/2-1); i++) {
   <li>horizontal!</li>
 </ul>
 <span>Make me invisible, please!</span>
-<!--  my code  -->
 <script>
   let hhh = document.getElementsByTagName("h1");   // Change background
   hhh[0].style.backgroundColor = '#43ac2a';
@@ -167,9 +168,10 @@ for (let i = 0; i < (bodyNodes.length/2-1); i++) {
   divv.style.textAlign = 'center'; 
   divv.style.width = '200px';
   document.body.appendChild(divv);
-</script>
-// ======================  Task 5 (FROM THE TEACHER)  ==============================>
-<h1>I'am a big header!!!</h1>
+</script> -->
+
+<!-- // ======================  Task 5 (FROM THE TEACHER)  ==============================> -->
+<!-- <h1>I'am a big header!!!</h1>
 <div id="myDiv">
   <p>First paragraph</p>
   <p>Second paragraph</p>
@@ -191,10 +193,10 @@ for (let i = 0; i < (bodyNodes.length/2-1); i++) {
   document.getElementById("myList").style.listStyle = 'none';
   document.getElementById("myList").style.display = 'flex';  // or document.getElementById("myList").style.display = 'inline';
   document.getElementsByTagName("span")[0].style.display = 'none';
-</script>
+</script> -->
 
-// ********************  Task 6 **************************
-<input type="text" id="input1" value="Text1">
+<!-- // ********************  Task 6 ************************** -->
+<!-- <input type="text" id="input1" value="Text1">
 <input type="text" id="input2" value="Text2">
 <script>
   // input messages
@@ -204,9 +206,10 @@ for (let i = 0; i < (bodyNodes.length/2-1); i++) {
   // change text into the forms
   document.querySelector("#input1").value = firstMessage;
   document.querySelector("#input2").value = secondMessage;
-</script>
-// ======================  Task 6 (FROM THE TEACHER)  ==============================>
-<input type="text" id="input1" value="Text1">
+</script> -->
+
+<!-- // ======================  Task 6 (FROM THE TEACHER)  ==============================> -->
+<!-- <input type="text" id="input1" value="Text1">
 <input type="text" id="input2" value="Text2">
 <script>
   let data1 = prompt("Enter FIRST message ", "first message");
@@ -220,10 +223,10 @@ for (let i = 0; i < (bodyNodes.length/2-1); i++) {
   let input2Value = inp2.value;
   inp1.value = input2Value;
   inp2.value = input1Value;
-</script>
+</script> -->
 
-// ********************  Task 7 **************************
-<script>
+<!-- // ********************  Task 7 ************************** -->
+<!-- <script>
     // creating
     let newMain = document.createElement("main"); 
     newMain.className = "mainClass check item";
@@ -238,8 +241,9 @@ for (let i = 0; i < (bodyNodes.length/2-1); i++) {
     document.body.appendChild(newMain);
     newMain.appendChild(newDiv);
     newDiv.appendChild(newP);
-</script>
-// ======================  Task 7 (FROM THE TEACHER)  ==============================>
+</script> -->
+
+<!-- // ======================  Task 7 (FROM THE TEACHER)  ==============================> -->
 <!-- Empty page -->
 <script>
     const x = 100;
@@ -252,6 +256,6 @@ for (let i = 0; i < (bodyNodes.length/2-1); i++) {
 </script>
 
 
-// The solution of tasks for the Lecture-06 is completed
+<!-- // The solution of tasks for the Lecture-06 is completed -->
 </body>
 </html>
