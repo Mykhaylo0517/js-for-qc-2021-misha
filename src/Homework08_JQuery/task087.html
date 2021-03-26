@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    function checkLogin(loginForCheck) {
+        let regExp = /^[a-zA-Z]+[a-zA-Z0-9.]{1,9}$/;
+        let numResults = /[0-9]+[0-9.]*/g;
+        if (regExp.test(loginForCheck)){
+            console.log(true);             
+            console.log(loginForCheck.match(numResults));
+            return;
+        }
+        else {
+            console.log(false); 
+            console.log(loginForCheck.match(numResults));
+            return;  
+        }        
+    }
+    checkLogin('ee1.1ret3');  // true   // 1.1, 3
+    checkLogin('ee1*1ret3');        // false  // 1, 1, 3
+    // checkLogin('ee1.');      // true  // 1, 1, 3  
+    // checkLogin('ee1.sdds897fdesw');  // false  // 1, 1, 3  
+    // checkLogin('e');                // false  
+    // checkLogin('122e');             // false  
+    // checkLogin('e.erg.ghj02');            // false  
+    // checkLogin('e.erg.ghj0');             // true  
+  </script>
+</body>
+</html>
