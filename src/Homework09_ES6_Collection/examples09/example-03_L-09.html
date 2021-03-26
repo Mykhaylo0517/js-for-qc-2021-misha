@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Arrow-function with several arguments
+        const sum = (a,b) => a + b; 
+        // ES5 analog is:
+        // let sum = function(a, b) { return a + b; }; 
+        alert( sum(1, 2) ); // 3 
+
+        // Arrow-function as a callback
+        const arr = [5, 8, 3, 2, 2, 6]; 
+        const sorted = arr.sort( (a,b) => a - b ); 
+        alert(sorted); // 3, 5, 8 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <script>
+        // Spread operator: ...
+        const numbers = [11, 8, 44, 87];
+        const minimum = Math.min(...numbers);
+        console.log(minimum); // 8
+
+        // Spread operator: concat
+        const arr1 = [7, 3, 9, 12, 21];
+        const arr2 = [22, 7, 15, 18, 33];
+        const concatArray = [...arr1, ...arr2];
+        console.log(concatArray); // [7, 3, 9, 12, 21, 22, 7, 15, 18, 33]
+
+        // rest (залишковий) parameters  ====>  Rest will get all the parameters after the first.
+        const func = (arg1, ...rest) => {
+            console.log(arg1);
+            console.log(rest);
+        }
+        func("First", "Second", "Third", "Fourth"); // "First"
+                                            // ["Second", "Third", "Fourth"]
+
+        function func1(arg1, arg2, arg3) {
+            console.log(arg1 + " " + arg2 + " " + arg3);
+        }
+        const data = ["First", "Second", "Third", "Fourth"];
+        func1(data);    // "First, Second, Third, Fourth undefined undefined"
+        func1(...data); // "First Second Third"
+
+    </script>
+</body>
+</html>

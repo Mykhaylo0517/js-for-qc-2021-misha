@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <script>
+        // Function ES5
+
+        // тут прокидуємо зовнішній this в середину іншої функції
+        function Person() {
+            let self = this; // here we catch this
+            this.age = 0;
+            setInterval(function growUp() {
+                self.age++;
+            }, 1000);
+        }
+        let p = new Person();
+
+        // в цьому прикладі this для кожної функції є свій і вони різні
+        function Person() {
+            // let self = this; // here we catch this
+            this.age = 0;
+            setInterval(function growUp() {
+                this.age++;
+            }, 1000);
+        }
+        let p = new Person();
+
+    </script>
+</body>
+</html>
