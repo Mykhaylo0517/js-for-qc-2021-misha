@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Collections. Set. Iterator
+        // map.set(key, value)  – writes the value value by key. 
+        //  
+        const map	= new Map();
+        map.set("name", "Nicholas");
+        map.set("age",	25);
+        console.log(map.size);			    //	2
+        console.log(map.has("name"));		//	true
+        console.log(map.get("name"));		//	"Nicholas"
+        console.log(map.has("age"));		//	true
+        console.log(map.get("age"));		//	25
+        map.delete("name");
+        console.log(map.has("name"));		//	false
+        console.log(map.get("name"));		//	undefined
+        console.log(map.size);		    	//	1
+        map.clear();
+        console.log(map.has("age"));		//	false
+        console.log(map.get("age"));		//	undefined
+        console.log(map.size);  			//	0
+
+    </script>
+</body>
+</html>

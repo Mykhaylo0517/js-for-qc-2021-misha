@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Explicit Iterator Call
+        const str = "DOM";
+        let iterator = str[Symbol.iterator]();
+        while (true) {
+            let res = iterator.next();
+            if (res.done) break;
+            console.log(res.value);
+        }
+
+    </script>
+</body>
+</html>

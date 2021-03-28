@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Collections. Set. Iterator
+        const cities = new Set();
+        const kyiv = "Kyiv";
+        const rome = "Rome";
+        const berlin = "Berlin";
+        const madrid = "Madrid";
+        cities.add(kyiv);
+        cities.add(rome);
+        cities.add(berlin);
+        cities.add(madrid);
+        cities.add(kyiv);                // kyiv againg< but this ellemend wasn't added!
+        console.log(cities.size);       // 4
+        console.log(cities.has(berlin)); // true
+
+        // Iterator
+        for (let city of cities) {
+        console.log(city); // Kyiv Rome Berlin Madrid
+        }
+
+    </script>
+</body>
+</html>

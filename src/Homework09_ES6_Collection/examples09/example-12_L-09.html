@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <script>
+        // Symbol. "Hidden" properties
+        let key = Symbol("key");
+        let person = {
+            position: "webDev",
+            experience: 3,
+            [key]: 100
+        };
+        
+        for (let props in person) {
+            console.log(props);		// position, experience
+        }
+        console.log(person[key]); // 100
+
+
+    </script>
+</body>
+</html>

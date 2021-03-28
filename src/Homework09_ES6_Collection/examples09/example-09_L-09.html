@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <script>
+        // Destructuring. Objects
+        const direction = {
+            type: "web",
+            name: "JavaScript"
+        };
+        const { type, name } = direction;   // const type = direction.type;
+                            // const name = direction.name;
+        console.log(type);   // "web"
+        console.log(name);   // "JavaScript"
+
+
+        // example with combined and put into each other
+        const cities = {
+            first: "Lviv",
+            second: "Kyiv",
+            third: {p1:"Berlin", p2: "Hamburg"}
+        };
+        const {first: f, second: s, third: {p1, p2}} = cities;
+        console.log(f); // "Lviv"
+        console.log(s); // "Kyiv"
+        console.log(p1); // "Berlin"
+        console.log(p2); // "Hamburg"
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Collections. Iteration over Map 
+        // map.keys() - returns an iterable object by keys,
+        // map.values() - returns an iterable object by values,
+        // map.entries() - returns an iterable object by pairs of the form [key, value], this option is used by default in for..of.
+        const recipeMap = new Map([
+            ['cucumber', 500],
+            ['tomatoes', 350],
+            ['onion',    50]
+        ]);
+        for (let vegetable of recipeMap.keys()) {
+            alert(vegetable);                // cucumber, tomatoes, onion
+        }
+        for (let amount of recipeMap.values()) {
+            alert(amount);                  // 500, 350, 50
+        }
+        for (let entry of recipeMap) {       // the same as of recipeMap.entries()
+            alert(entry);                    // cucumber,500 (and so on)
+        }
+        log(map.size);  		         	//	0
+
+    </script>
+</body>
+</html>

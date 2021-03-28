@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <script>
+        // Destructuring in functions parameters
+        function func( {first, second, third} ) {
+            console.log(first + " " + second + " " + third);
+        }
+        const cities = {
+            first: "Lviv",
+            second: "Kyiv",
+            third: "Dnipro"
+        };
+        func(cities); // "Lviv Kyiv Dnipro"
+
+    </script>
+</body>
+</html>

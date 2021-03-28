@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My title (L-09)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>    
+    <script>
+        function mul(args, ...rests) {
+            let arrNew = [];
+            let argsLength = 0;
+            arrNew[argsLength] = args;
+
+            for (let valueArr of rests) {
+                argsLength++; arrNew[argsLength] = valueArr; 
+            }
+            
+            let mult = 0;
+            for (let j = 0; j <= argsLength; j++) {
+                // console.log((typeof arrNew[j]), '= ', arrNew[j]);
+                if ((typeof arrNew[j]) == 'number') {
+                    mult = 1;                 
+                } else {
+                    arrNew[j] = 1;
+                }
+            }
+
+            if (mult != 0) {
+                for (let j = 0; j <= argsLength; j++) {
+                    mult = mult * arrNew[j];
+                }
+            }
+            
+            console.log ('mul =', mult);
+        }   
+        
+        console.log(mul(1, "str", 2, 3, true)); // 6
+        console.log(mul(null, "str", false, true)); // 0
+        console.log(mul(null, "str", false, true, 5, 222, 0.4, 'NaN')); // 444
+    </script>
+</body>
+</html>
