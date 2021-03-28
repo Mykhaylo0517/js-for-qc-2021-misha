@@ -7,20 +7,90 @@
 <body>
 
 <!-- // ********************  Task 1 ************************** -->
-
+<!-- <script> 
+    let arr = ["Tom", "Sam", "Ray", "Bob"];
+    let [x, y, , z] = arr;
+    console.log(x); // "Tom"
+    console.log(y); // "Sam"
+    console.log(z); // [Bob]
+</script> -->
 
 <!-- // ********************  Task 2 ************************** -->
+<!-- <script> 
+    let data = {
+        names: ["Sam", "Tom", "Ray", "Bob"],
+        ages: [20, 24, 22, 26],
+    };
+    let { names: [name1, name2, name3, name4],
+            ages: [age1, age2, age3, age4], } = data;
+    console.log(name2); // "Tom"
+    console.log(age2); // 24
+    console.log(name4); // "Bob"
+    console.log(age4); // 26
+</script> -->
 
 <!-- // ********************  Task 3 ************************** -->
+<!-- <script>
+    function mul(args, ...rests) {
+        let arrNew = [];
+        let argsLength = 0;
+        arrNew[argsLength] = args;
+
+        for (let valueArr of rests) {
+            argsLength++; arrNew[argsLength] = valueArr; 
+        }
+        
+        let mult = 0;
+        for (let j = 0; j <= argsLength; j++) {
+            // console.log((typeof arrNew[j]), '= ', arrNew[j]);
+            if ((typeof arrNew[j]) == 'number') {
+                mult = 1;                 
+            } else {
+                arrNew[j] = 1;
+            }
+        }
+
+        if (mult != 0) {
+            for (let j = 0; j <= argsLength; j++) {
+                mult = mult * arrNew[j];
+            }
+        }
+        
+        console.log ('mul =', mult);
+    }   
+    
+    console.log(mul(1, "str", 2, 3, true)); // 6
+    console.log(mul(null, "str", false, true)); // 0
+    console.log(mul(null, "str", false, true, 5, 222, 0.4, 'NaN')); // 444
+</script> -->
 
 <!-- // ********************  Task 4 ************************** -->
+<script>
+let server = {
+    data: 0,
+    convertToString: function (callback) {
+        callback( () => this.data + "");
+    }
+};
+let client = {
+    server: server,
+    result: "",
+    calc: function (data) {
+        this.server.data = data;
+        this.server.convertToString(this.notification());
+    },
+    notification: function () {
+        return ( callback =>  this.result = callback(this));
+    }
+};
+
+client.calc(123);
+console.log(client.result); // "123"
+console.log(typeof client.result); // "string"
+</script>
 
 <!-- // ********************  Task 5 ************************** -->
 
-<!-- // ********************  Task 6 ************************** -->
-
-
-<!-- // ********************  Task 7 ************************** -->
 
 <!-- // The solution of tasks for the Lecture-09 is completed -->
 
