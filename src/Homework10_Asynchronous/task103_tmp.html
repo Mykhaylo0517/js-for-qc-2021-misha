@@ -7,14 +7,13 @@
 </head>
 <body>
     <script>
-        function getPromise(message, delay) {
-          
-        }
-        
-        getPromise("test promise", 2000).then(function(data) {
-            console.log(data);
-        });
 
+        const delay = (i, time) => new Promise(resolve => setTimeout(() => resolve(i), time));
+        function showNumbers() {
+            // your code with using delay(i, time)
+        }
+        showNumbers();
+        
     </script>
 </body>
 </html>

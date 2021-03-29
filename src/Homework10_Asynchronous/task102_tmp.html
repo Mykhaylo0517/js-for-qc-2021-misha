@@ -7,14 +7,13 @@
 </head>
 <body>
     <script>
-        function getPromise(message, delay) {
+        function calcArrProduct(arr) {
           
         }
         
-        getPromise("test promise", 2000).then(function(data) {
-            console.log(data);
-        });
-
+        calcArrProduct([3,4,5]).then(result => console.log(result)); // 60
+        calcArrProduct([5,"user2", 7, 12]).then(result => console.log(result)); // "Error! Incorrect array!"
+        
     </script>
 </body>
 </html>
