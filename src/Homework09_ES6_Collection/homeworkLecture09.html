@@ -65,7 +65,7 @@
 </script> -->
 
 <!-- // ********************  Task 4 ************************** -->
-<script>
+<!-- <script>
 let server = {
     data: 0,
     convertToString: function (callback) {
@@ -87,10 +87,27 @@ let client = {
 client.calc(123);
 console.log(client.result); // "123"
 console.log(typeof client.result); // "string"
-</script>
+</script> -->
 
 <!-- // ********************  Task 5 ************************** -->
-
+<script> 
+    function mapBuilder (keysArray, valuesArrays) {
+        let setK = new Set(keysArray), arrayK = [...setK];
+        let setV = new Set(valuesArrays), arrayV = [...setV];
+                    
+        let newMapBuilder = new Map();
+        for (let i = 0; i <= setK.size-1; i++) {
+            newMapBuilder.set(arrayK[i], arrayV[i]);
+        }            
+        return newMapBuilder;
+    }
+    
+    let keys = [1, 2, 3, 4];
+    let values = ["div", "span", "b", "i"];
+    let map = mapBuilder(keys, values);
+    console.log(map.size); // 4
+    console.log(map.get(2)); // "span"
+</script>
 
 <!-- // The solution of tasks for the Lecture-09 is completed -->
 
