@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Promise. Limitations of use
+        // ONLY ONE ARGUMENT !!!
+
+        const promise = new Promise(function (resolve, reject) {
+            setTimeout(function() {
+                resolve("Done1", "Done2");
+            }, 2000);
+        });
+
+        promise.then(function (res1, res2) {
+            console.log(`${res1} ${res2}`); // "Done1 undefined"
+        });
+
+    </script>
+</body>
+</html>

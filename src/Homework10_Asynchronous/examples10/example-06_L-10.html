@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Promise. Limitations of use
+        // 
+        const promise = new Promise(function (resolve, reject) {
+            setTimeout(function() {
+                resolve("Done");
+                reject("Error"); // the call will be ignored
+            }, 2000);
+        });
+
+        promise.then(function (result) {
+            console.log(result);
+        },
+        function (error) {
+            console.log(error);
+        });
+
+    </script>
+</body>
+</html>

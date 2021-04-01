@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Promise.all
+        const user1 = new Promise(resolve => {
+            setTimeout(() => {
+                resolve({ id: 10, login: "administrator" });
+            }, 2000);
+        });
+
+        const user2 = new Promise(resolve => {
+            setTimeout(() => {
+                resolve({ id: 22, login: "tester" });
+            }, 500);
+        });
+
+        Promise.all([user1, user2])
+        .then(res => {
+            console.log("Array of results:", res);
+        })
+        .catch(err => {
+            console.error(err);
+        });
+
+    </script>
+</body>
+</html>

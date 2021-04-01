@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Promise is NOT chains!!!
+        // 
+        const p = new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            resolve("Done");
+        }, 2000);
+        });
+        p.then(function(result) {
+        console.log(result);
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve(true);
+            }, 2000);
+        });
+        }).then(function(result) { // result will contain result of the promise from the previous then()
+        console.log(result);
+        });
+
+    </script>
+</body>
+</html>

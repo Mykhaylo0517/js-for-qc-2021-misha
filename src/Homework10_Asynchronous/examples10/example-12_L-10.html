@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Async
+        // 
+        // async function testAsync() {
+        //     return "Done";  // Promise.resolve("Done");
+        // }
+
+        // testAsync().then(console.log);
+
+
+        // the same but by =>
+        const testAsync = async () => {
+            return "Done";
+        }
+
+        testAsync().then(console.log);
+
+    </script>
+</body>
+</html>

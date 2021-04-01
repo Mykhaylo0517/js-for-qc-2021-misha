@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Promise creation. function parameters:
+            // resolve (result) on success;
+            // reject (error) on error.
+
+        // example for creation promise-function
+        // const promise = new Promise(function(resolve, reject) {
+        //     // function executor
+        // });
+
+        // const isBossHappy = true;
+        const isBossHappy = false;
+
+        const willIGetPremium = new Promise(
+            function (resolve, reject) {
+                if (isBossHappy) {
+                    const bonus = {
+                        kind: 'premium',
+                        amount: 500
+                    };
+                    resolve(bonus); // done
+                } else {
+                    const reason = new Error('Premium rejected!');
+                    reject(reason); // reject
+                }
+            }
+        );
+
+        // willIGetPremium;  // enter the function into console
+
+        willIGetPremium
+        .then(function (result) {
+            console.log(result); // output: { kind: 'premium', amount: 500 }
+        },
+            function (error) {
+                console.log(error.message); // output: 'Premium rejected!'
+        });
+
+
+    </script>
+</body>
+</html>

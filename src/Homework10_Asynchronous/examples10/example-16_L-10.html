@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Async/await with Promise.all 
+        async function go() {
+            const p1 = fetch("https://api.github.com/users/oleksiimyzgin");
+            const p2 = fetch("https://api.github.com/users/leoyats");
+
+            // We wait for both of them to return
+            const res = await Promise.all([p1, p2]);
+            console.log("res", res); // res (2) [Response, Response]
+        }
+
+        go();
+
+    </script>
+</body>
+</html>

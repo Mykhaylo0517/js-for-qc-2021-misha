@@ -5,10 +5,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <!-- DOM tree  -->
-
     <script>
+        // // Synchrone
+        // function calcTax(tax1, tax2) {
+        //     const totalTax =  (tax1 + tax2) * 0.85;
+        //     console.log(totalTax);
+        // }
+        // console.log("Start calculation");
+        // calcTax(200, 100);
+        // console.log("End calculation");
+        // // Start calculation
+        // // 255
+        // // End calculation
 
+
+        // the same, byt asynchrone
+        function calcTax(tax1, tax2) {
+            const totalTax =  (tax1 + tax2) * 0.85;
+            setTimeout(function() {
+                console.log(totalTax);
+            }, 2500);
+        }
+        console.log("Start calculation");
+        calcTax(200, 100);
+        console.log("End calculation");
+        // Start calculation
+        // End calculation
+        // 255
 
     </script>
 </body>

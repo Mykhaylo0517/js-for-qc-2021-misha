@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Promises and asynchrony
+        // 
+        const promise = new Promise(function(resolve, reject) {
+            resolve("Done");
+        });
+
+        console.log(`Before promise`);
+        
+        promise.then(function (result) {
+        console.log(`${result}`); 
+        });
+
+        console.log(`After promise`);
+
+    </script>
+</body>
+</html>

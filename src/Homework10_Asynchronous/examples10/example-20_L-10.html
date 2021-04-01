@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Асинхронная операция (https://medium.com/web-standards/%D0%BE%D0%B1%D0%B5%D1%89%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B1%D1%83%D1%80%D0%B3%D0%B5%D1%80%D0%BD%D0%BE%D0%B9-%D0%B2%D0%B5%D1%87%D0%B5%D1%80%D0%B8%D0%BD%D0%BA%D0%B8-b0ed209809ab)
+        // function cookBurger (type) { ... }  
+        // Обычная операция
+        // function makeMilkshake (type) { ... }
+        // Функция оформления заказа, возвращает промис
+        function order (type) {   
+        return new Promise(function(resolve, reject) {
+            var burger = cookBurger(type)
+            burger.ready = function (err, burger) {
+                if (err) {
+                    return reject(Error('Error while cooking'))
+                }
+                return resolve(burger)
+            }
+        })
+        }
+        order('JakeBurger')
+        .then( burger => {
+            const milkshake = makeMilkshake('vanila')
+            return { burger: burger, shake: milkshake }
+        })
+        .then( foodItems => {
+            console.log('BURGER PARTY !', foodItems)
+        })
+        .catch( err => {
+            console.log(err)   
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Callbacks (include or attachment)
+        console.log("Request to server ...");
+
+        setTimeout(function fetchData(){
+            console.log("Loading ...");
+            const serverData = {
+                user: "Employee10",
+                id: 122,
+                location: "Lviv"
+            }
+            setTimeout(function showData(){
+                serverData.received = true;
+                console.log("Data loaded:", serverData);
+            }, 1500)
+
+        }, 1500);
+
+        console.log("Other activities");
+
+    </script>
+</body>
+</html>

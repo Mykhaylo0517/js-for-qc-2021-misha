@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // Promise is NOT chains!!!
+        // 
+        let promise = new Promise(function(resolve, reject) {
+            setTimeout(() => resolve(1), 1000);
+        });
+
+        promise.then(function(result) {
+            alert(result); // 1
+            return result * 2;
+        });
+
+        promise.then(function(result) {
+            alert(result); // 1
+            return result * 2;
+        });
+
+        promise.then(function(result) {
+            alert(result); // 1
+            return result * 2;
+        });
+
+
+    </script>
+</body>
+</html>

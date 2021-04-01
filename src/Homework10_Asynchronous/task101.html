@@ -7,10 +7,20 @@
 </head>
 <body>
     <script>
+        // Method 1 (by function)
+        // function getPromise(message, delay) {
+        //     setTimeout(function() {
+        //         console.log(message);
+        //     }, delay);
+        // }
+        // getPromise("test promise", 2000);
+
+
+        // Method 2 (by Promise)
         function getPromise(message, delay) {
-          
+            return new Promise(resolve => setTimeout(() => resolve(message), delay));
         }
-        
+            
         getPromise("test promise", 2000).then(function(data) {
             console.log(data);
         });
