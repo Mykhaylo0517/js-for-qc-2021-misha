@@ -16,6 +16,15 @@
     console.log(z); // [Bob]
 </script> -->
 
+<!-- // ======================  Task 1 (FROM THE TEACHER)  ==============================> -->
+<!-- <script> 
+    let arr = ["Tom", "Sam", "Ray", "Bob"];
+    let [x, y, , ...z] = arr;
+    console.log(x); // "Tom"
+    console.log(y); // "Sam"
+    console.log(z); // [Bob]
+</script> -->
+
 <!-- // ********************  Task 2 ************************** -->
 <!-- <script> 
     let data = {
@@ -29,6 +38,9 @@
     console.log(name4); // "Bob"
     console.log(age4); // 26
 </script> -->
+
+<!-- // ======================  Task 2 (FROM THE TEACHER)  ==============================> -->
+<!-- the same -->
 
 <!-- // ********************  Task 3 ************************** -->
 <!-- <script>
@@ -65,33 +77,76 @@
     console.log(mul(null, "str", false, true, 5, 222, 0.4, 'NaN')); // 444
 </script> -->
 
+<!-- // ======================  Task 3 (FROM THE TEACHER)  ==============================> -->
+<!-- <script>
+    function mul(...rest) {
+        let result =1;
+        let isNumber;
+        for (let i of rest) {
+            if (typeof i == 'number') {
+                result *=i;
+                isNumber = true;
+            }
+        }
+        return isNumber ? result : 0;
+    }   
+    
+    console.log(mul(1, "str", 2, 3, true)); // 6
+    console.log(mul(null, "str", false, true)); // 0
+    console.log(mul(null, "str", false, true, 5, 222, 0.4, 'NaN')); // 444
+</script> -->
+
 <!-- // ********************  Task 4 ************************** -->
 <!-- <script>
-let server = {
-    data: 0,
-    convertToString: function (callback) {
-        callback( () => this.data + "");
-    }
-};
-let client = {
-    server: server,
-    result: "",
-    calc: function (data) {
-        this.server.data = data;
-        this.server.convertToString(this.notification());
-    },
-    notification: function () {
-        return ( callback =>  this.result = callback(this));
-    }
-};
+    let server = {
+        data: 0,
+        convertToString: function (callback) {
+            callback( () => this.data + "");
+        }
+    };
+    let client = {
+        server: server,
+        result: "",
+        calc: function (data) {
+            this.server.data = data;
+            this.server.convertToString(this.notification());
+        },
+        notification: function () {
+            return ( callback =>  this.result = callback(this));
+        }
+    };
 
-client.calc(123);
-console.log(client.result); // "123"
-console.log(typeof client.result); // "string"
+    client.calc(123);
+    console.log(client.result); // "123"
+    console.log(typeof client.result); // "string"
+</script> -->
+
+<!-- // ======================  Task 4 (FROM THE TEACHER)  ==============================> -->
+<!-- <script>
+    let server = {
+        data: 0,
+        convertToString: function (callback) {
+            callback( () => { return this.data + ""; });
+        }
+    };
+    let client = {
+        server: server,
+        result: "",
+        calc: function (data) {
+            this.server.data = data;
+            this.server.convertToString(this.notification());
+        },
+        notification: function () {
+            return (callback => { this.result = callback(); });
+        }
+    };
+    client.calc(123);
+    console.log(client.result); // "123"
+    console.log(typeof client.result); // "string"
 </script> -->
 
 <!-- // ********************  Task 5 ************************** -->
-<script> 
+<!-- <script> 
     function mapBuilder (keysArray, valuesArrays) {
         let setK = new Set(keysArray), arrayK = [...setK];
         let setV = new Set(valuesArrays), arrayV = [...setV];
@@ -108,7 +163,25 @@ console.log(typeof client.result); // "string"
     let map = mapBuilder(keys, values);
     console.log(map.size); // 4
     console.log(map.get(2)); // "span"
+</script> -->
+
+<!-- // ======================  Task 5 (FROM THE TEACHER)  ==============================> -->
+<script> 
+    function mapBuilder (keys, values) {
+        const map = new Map();
+        for (let i  of keys) {
+            map.set(i, values[i-1]);
+        }
+        return map;
+    }
+    
+    const keys = [1, 2, 3, 4];
+    const values = ["div", "span", "b", "i"];
+    const map = mapBuilder(keys, values);
+    console.log(map.size); // 4
+    console.log(map.get(2)); // "span"
 </script>
+
 
 <!-- // The solution of tasks for the Lecture-09 is completed -->
 
