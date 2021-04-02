@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Including JavaScript</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // by function
+        function calcArrProduct(arr) {
+        let result = 1;
+        let isNumber = true;        
+        for (let i of arr) {
+            if (typeof i == 'number') {
+                result *=i;                
+                }
+                else {
+                    isNumber = false;
+                }
+            }
+        return isNumber ? console.log(result) : console.log("Error! Incorrect array!");
+        }
+        
+        calcArrProduct([3,4,5]); // 60
+        calcArrProduct([5,"user2", 7, 12]); // "Error! Incorrect array!"
+
+        // calcArrProduct([3,4,5]).then(result => console.log(result)); // 60
+        // calcArrProduct([5,"user2", 7, 12]).then(result => console.log(result)); // "Error! Incorrect array!"
+        
+    </script>
+</body>
+</html>
