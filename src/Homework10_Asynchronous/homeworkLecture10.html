@@ -8,7 +8,7 @@
 <body>
 
 <!-- // ********************  Task 1 ************************** -->
-<script>
+<!-- <script>
     function getPromise(message, delay) {
         return new Promise(resolve => setTimeout(() => resolve(message), delay));
     }
@@ -16,18 +16,165 @@
     getPromise("test promise", 2000).then(function(data) {
         console.log(data);
     });
-</script>
+</script> -->
+
+<!-- // ======================  Task 1 (FROM THE TEACHER)  ==============================> -->
+<!-- <script>
+    function getPromise(message, delay) {
+        return new Promise((resolve) => {
+            setTimeout(function() {
+                resolve(message);
+            }, delay);
+        });
+    }  
+    getPromise("test promise", 2000).then(function(data) {
+        console.log(data);
+    });
+</script> -->
+
 
 <!-- // ********************  Task 2 ************************** -->
+<!-- <script>
+    // by function
+    function calcArrProduct(arr) {
+    let result = 1;
+    let isNumber = true;        
+    for (let i of arr) {
+        if (typeof i == 'number') {
+            result *=i;                
+            }
+            else {
+                isNumber = false;
+            }
+        }
+    return isNumber ? console.log(result) : console.log("Error! Incorrect array!");
+    }
+    
+    calcArrProduct([3,4,5]); // 60
+    calcArrProduct([5,"user2", 7, 12]); // "Error! Incorrect array!"
+</script> -->
 
+<!-- // ********************  Task 2 ************************** -->
+<!-- <script>
+// by Promise
+function calcArrProduct (arr) {
+    return new Promise( function (resolve, reject) {
+        let res = 1;
+        let isNumber = true;   
+        for (let i of arr) {
+            if (typeof i == 'number') {
+                res *=i;                
+                }
+                else {
+                    isNumber = false;
+                }
+            }
+        if (isNumber) {
+            resolve (res);
+        }
+        else { 
+            reject ("Error! Incorrect array!");
+        }
+    });
+}
+calcArrProduct([3,4,5]).then(result => console.log(result)); // 60
+calcArrProduct([5,"user2", 7, 12]).then(result => console.log(result)); // "Error! Incorrect array!"
+</script> -->
+
+<!-- // ======================  Task 2 (FROM THE TEACHER)  ==============================> -->
+<!-- <script>
+    function calcArrProduct (arr) {
+        return new Promise( (resolve,reject) => {
+            let res = 1;
+            for(let i = 0; i < arr.length; i++) {
+                if (typeof arr[i]  === "number") {
+                    res *= arr[i];                
+                }
+                else {
+                    reject("Error! Incorrect array!");
+                }
+            }
+            resolve(res);
+        });
+    }
+    calcArrProduct([3,4,5]).then(result => console.log(result)); // 60
+    calcArrProduct([5,"user2", 7, 12]).then(result => console.log(result)); // "Error! Incorrect array!"
+</script> -->
 
 <!-- // ********************  Task 3 ************************** -->
+<!-- <script>
+    const delay = (i, time) => new Promise(resolve => setTimeout(() => resolve(i), time));
+    function showNumbers() {
+        for (let i = 0, p = Promise.resolve(1); i <= 10; i++) {
+            const time = Math.floor(Math.random() * 5) * 1000; // delay 1-5 sec
+            p = p.then(() => 
+                delay(i, time).then((result) => {
+                    console.log(`result = ${result}, delay = ${time / 1000} sec`);
+                })
+            );
+        }
+    }
+    showNumbers();
+</script> -->
 
+<!-- // ======================  Task 3 v.1 (FROM THE TEACHER)  ==============================> -->
+<!-- <script>
+    const delay = (i, time) => new Promise(resolve => setTimeout(() => resolve(i), time));
+    function showNumbers() {
+        for (let i = 0, p = Promise.resolve(1); i <= 10; i++) {
+            const time = Math.floor(Math.random() * 5) * 1000; // delay 1-5 sec
+            p = p.then(() => 
+                delay(i, time).then((result) => {
+                    console.log(`result = ${result}, delay = ${time / 1000} sec`);
+                })
+            );
+        }
+    }
+    showNumbers();
+</script> -->
+
+<!-- // ======================  Task 3 v.2 (FROM THE TEACHER)  ==============================> -->
+<!-- <script>
+    // by recursiove
+    const printNumberRecursiove = () => {
+        return Promise.resolve(0).then(function processNextPromise(i) {
+            if (i === 10) {
+                return underfined;
+            }
+            return delay(i, Math.random() * 1000).then((val) => {
+                console.log(val);
+                return processNextPromise(i + 1);
+            });
+        });
+    };
+</script> -->
 
 <!-- // ********************  Task 4 ************************** -->
+<script>
+    const delay = (i, time) => new Promise(resolve => setTimeout(() => resolve(i), time));
+    async function showNumbers() {
+        // your code with using delay(i, time)
+        for (let num = 0; num <= 10; num++) {
+            await delay(num, Math.random() * 5000);
+            console.log(num);
+        }
+    }
+    showNumbers();
+</script>
 
+
+<!-- // ======================  Task 4 (FROM THE TEACHER)  ==============================> -->
+<!-- <script>
+    const delay = (i, time) => new Promise(resolve => setTimeout(() => resolve(i), time));
+    async function showNumbers() {
+        for (let i = 0; i <= 10; i++) {
+            await delay(i, Math.random() * 2000);
+            console.log(i, );
+        }
+    }
+    showNumbers();
+</script> -->
 
 <!-- // The solution of tasks for the Lecture-09 is completed -->
-
 </body>
 </html>

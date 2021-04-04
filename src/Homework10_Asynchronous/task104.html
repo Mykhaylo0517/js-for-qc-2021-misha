@@ -7,13 +7,15 @@
 </head>
 <body>
     <script>
-
         const delay = (i, time) => new Promise(resolve => setTimeout(() => resolve(i), time));
-        function showNumbers() {
+        async function showNumbers() {
             // your code with using delay(i, time)
+            for (let num = 0; num <= 10; num++) {
+                await delay(num, Math.random() * 5000);
+                console.log(num);
+            }
         }
         showNumbers();
-
     </script>
 </body>
 </html>

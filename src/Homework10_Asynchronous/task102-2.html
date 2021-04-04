@@ -9,7 +9,7 @@
     <script>
         // by Promise
         function calcArrProduct (arr) {
-            const promise = new Promise( function (resolve, reject) {
+            return new Promise( function (resolve, reject) {
                 let res = 1;
                 let isNumber = true;   
                 for (let i of arr) {
@@ -21,17 +21,15 @@
                         }
                     }
                 if (isNumber) {
-                    resolve (console.log(res));
+                    resolve (res);
                 }
                 else { 
-                    reject (console.log("Error! Incorrect array!"));
+                    reject ("Error! Incorrect array!");
                 }
             });
         }
-
         calcArrProduct([3,4,5]).then(result => console.log(result)); // 60
-        calcArrProduct([5,"user2", 7, 12]).then(result => console.log(result)); // "Error! Incorrect array!"
-        
+        calcArrProduct([5,"user2", 7, 12]).then(result => console.log(result)); // "Error! Incorrect array!"        
     </script>
 </body>
 </html>
