@@ -226,4 +226,34 @@ switch (true) {
     console.log("Third method. Good night.");
 }
 
+// ********************  Task 7 (FROM THE TEACHER) **************************
+// method-1
+let date = new Date();
+let currentHour = date.getHours();
+if (currentHour >= 23 && currentHour <= 5) {
+    alert ("Good night, ");
+} else if (currentHour > 5 && currentHour <= 11) {
+    alert ("Good morning, ");
+} else if (currentHour > 11 && currentHour <= 17) {
+    alert ("Good day, ");
+} else if (currentHour > 17 && currentHour < 23) {
+    alert ("Good morning, ");
+}
+// method-2
+let date = new Date();
+let currentHour = date.getHours();
+switch (true) {
+    case (currentHour > 5 && currentHour <= 11): 
+        alert ("Good morning.");
+        break;
+    case (currentHour > 11 && currentHour <= 17): 
+        alert ("Good day.");
+        break;
+    case (currentHour > 17 && currentHour <= 23): 
+        alert ("Good evening.");
+        break;
+    default: 
+    alert ("Good night.");
+}
+
 // The solution of tasks for the Lecture-02 is completed
