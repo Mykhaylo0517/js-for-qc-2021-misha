@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <button onclick="loadData()" id="button">Download books</button>
+  <ul id="list"></ul>
+
+  <script>
+    function loadData() {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', './books.json', true);
+      xhr.setRequestHeader("Content-type", "application/json");
+      
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState != 4) return;
+
+        button.parentNode.removeChild(button);
+                
+        if (xhr.status != 200) {
+          // handle error
+          alert(xhr.status + ': ' + xhr.statusText);
+        } else {
+          let books;
+          try {
+            books = JSON.parse(xhr.responseText);
+          } catch (e) {
+            alert("Invalid answer " + e.message);
+          }
+          showBooks(books);
+        }
+      }
+      xhr.send();
+      button.innerHTML = 'Loadding ...';
+      button.disabled = true;
+    }
+    
+    function showBooks(books) {
+      books.forEach(function(book) {
+        let li = list.appendChild(document.createElement('li'));
+        li.innerHTML = book.author;
+      });
+    }
+
+  </script>
+</body>
+</html>
