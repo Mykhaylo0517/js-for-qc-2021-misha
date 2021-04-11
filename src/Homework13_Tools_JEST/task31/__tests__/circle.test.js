@@ -13,5 +13,4 @@ describe("Tests for functions with circle", () => {
         expect(circle.getCircleLength()).toBeNaN();
         expect(circle.getCircleArea()).toBeNaN();
     });
-
 })
