@@ -1,0 +1,22 @@
+{
+  "name": "js-for-qc-2021-misha",
+  "version": "1.0.0",
+  "description": "repo for learning tasks and other mess :) 💯 👍 🔢 🥇",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mykhaylo0517/js-for-qc-2021-misha.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mykhaylo0517/js-for-qc-2021-misha/issues"
+  },
+  "homepage": "https://github.com/Mykhaylo0517/js-for-qc-2021-misha#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
