@@ -4,7 +4,7 @@
   "description": "repo for learning tasks and other mess :) 💯 👍 🔢 🥇",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive --timeout 10000 ./src/Homework14_Selenium/exampl2/test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
